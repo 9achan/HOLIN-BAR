@@ -1,0 +1,209 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+*{
+	box-sizing: border-box; /*不累加邊框和內距，間距還是會累加*/
+	background-color: var(--major-color);
+}
+a {
+	display: block;
+	text-decoration: none;
+}
+
+/* img {
+	display: block;
+	width: 100%;
+} */
+
+body {
+	font-family:
+		/*西文*/
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+		/*中文*/
+		"蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+}
+
+:root{
+	/* 主色調 */
+	--major-color: #ededed;
+	--major-color2:rgb(53, 57, 56);
+	--major-color3:#bc9f77;
+	/* 輔助色調 */
+	--lesser-color:rgba(237, 237, 237,0.7);
+    --lesser-color2:rgba(53, 57, 56,0.7);
+}
+
+.container{
+    border:2px solid red;
+    width: 1440px;
+    display: block;
+}
+.title{
+    color: antiquewhite;
+    font-size: 100px;
+}
+section{
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#banner{
+    /* position: relative; */
+    border: 2px solid purple;
+}
+#banner img{
+    /* z-index: -1; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+/* #banner {
+    height: 800px;
+    padding: 0;
+} */
+/* section{
+    height: 100vh;
+} */
+#banner img{
+    width: 100%;
+    /* height: 800px; */
+}
+
+#aboutus1{
+    display: flex;
+    flex-direction: row-reverse;
+    border:2px solid blue;
+    /* height: 800px; */
+    /* padding:0px 80px; */
+}
+#aboutus2{
+    border:2px solid green;
+    width: 1440px;
+    height: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+#aboutus2 h2{
+    writing-mode: vertical-rl;
+}
+#aboutus3{
+    border:2px solid pink;
+    width: 1440px;
+    height: 800px;
+    display: flex;
+}
+#about3 h2{
+    writing-mode: vertical-rl;
+}
+.footer{
+	border:2px solid orange;
+	color: var(--major-color2);
+	text-align: center;
+	padding: 20px 0;
+}
