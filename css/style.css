@@ -1,84 +1,19 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap");
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -86,18 +21,31 @@ video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 *{
 	box-sizing: border-box; /*不累加邊框和內距，間距還是會累加*/
 	background-color: var(--major-color);
@@ -123,29 +71,56 @@ body {
 :root{
 	/* 主色調 */
 	--major-color: #ededed;
-	--major-color2:rgb(53, 57, 56);
+	--major-color2:#353938;
 	--major-color3:#bc9f77;
 	/* 輔助色調 */
 	--lesser-color:rgba(237, 237, 237,0.7);
     --lesser-color2:rgba(53, 57, 56,0.7);
 }
-
-.container{
-    border:2px solid red;
-    width: 1440px;
-    display: block;
-}
-.title{
-    color: antiquewhite;
-    font-size: 100px;
-}
-section{
-
-    flex-direction: column;
-    justify-content: center;
+.topbar{
+    position: fixed;
+    border: yellow 2px solid;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    padding: 5px 80px;
 }
+.topbar nav{
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    /* align-items: center; */
+
+}
+.topbar .menu{
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+}
+
+.topbar .menu a{
+    padding: 5px 0px;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    font-size:1.125rem;
+    color: var(--major-color2);
+    margin: 0 20px;
+}
+.topbar .user{
+    display: flex;
+    align-items: center;
+    /* margin-right: 1px; */
+}    
+
+.topbar .icon{
+    display:flex;
+    /* align-items:center ; */
+}
+
 #banner{
     /* position: relative; */
     border: 2px solid purple;
@@ -174,31 +149,34 @@ section{
     width: 100%;
     /* height: 800px; */
 }
-
-#aboutus1{
+.container{
+    border:2px solid red;
+    width: 1440px;
+    display: block;
+}
+.intro1{
     display: flex;
     flex-direction: row-reverse;
     border:2px solid blue;
     /* height: 800px; */
     /* padding:0px 80px; */
 }
-#aboutus2{
+.intro2{
     border:2px solid green;
-    width: 1440px;
     height: 800px;
     display: flex;
     justify-content: space-between;
 }
-#aboutus2 h2{
+.intro2 h2{
     writing-mode: vertical-rl;
 }
-#aboutus3{
+.intro3{
     border:2px solid pink;
     width: 1440px;
     height: 800px;
     display: flex;
 }
-#about3 h2{
+.intro3 h2{
     writing-mode: vertical-rl;
 }
 .footer{
