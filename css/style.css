@@ -48,8 +48,8 @@ table {
 
 *{
 	box-sizing: border-box; /* 不累加邊框和內距，間距還是會累加 */
-	background-color: var(--major-color);
 }
+
 a {
 	display: block;
 	text-decoration: none;
@@ -80,7 +80,7 @@ body {
 
 
 /* 頁首區 */
-.topbar{
+.topbar {
     position: fixed;
     border: yellow 2px solid;
     top: 0;
@@ -111,13 +111,18 @@ body {
     font-weight: 700;
     font-size:1.125rem;
     color: var(--major-color2);
-    margin: 0 20px;
+    margin-right:20px;
 }
 .topbar .user{
     display: flex;
+    padding-bottom: 5px;
+    justify-content: center;
     align-items: center;
     /* margin-right: 1px; */
-}    
+}
+.topbar .user a{
+    margin-left: 0;
+} 
 
 .topbar .icon{
     display:flex;
@@ -127,9 +132,10 @@ body {
 
 /* banner區 */
 .banner{
+    border: 2px solid purple;
     display: flex;
     position: relative;
-    border: 2px solid purple;
+    background-color: var(--major-color);
 }
 .banner img{
     /* z-index: -1; */
@@ -162,6 +168,25 @@ body {
     border:2px solid red;
     width: 1440px;
     display: block;
+    background-color: var(--major-color);
+}
+/* container共用區 */
+.heading {
+    height: 20vh;
+    margin: 135px 0 0 80px;   /* 上右下左 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+}
+.intro1_info_txt,
+.intro2_contents_txt {
+    margin: 100px 0 80px 0;   /* 上右下左 */
+    line-height: 36px;
+    font-size: 1rem;
+    letter-spacing: 2px;
 }
 
 /* intro1區 */
@@ -172,46 +197,63 @@ body {
     /* height: 800px; */
     /* padding:0px 80px; */
 }
-.heading {
-    height: 20vh;
-    margin: 0 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-}
 .intro1_contents {
     display: flex;
-    margin: 0 120px;
 }
-/* .intro1_info_txt {
-    padding: 40px;
+.intro1_info {
+    margin: 0 80px;  /* 上下 左右 */
+    letter-spacing: 2px;
 }
-.intro1_info_access {
-    padding: 40px;
-} */
+.intro1_info_access_holin,
+.intro1_info_access_addr {
+    margin: 0 0 16px 0;
+}
+.intro1_info_access_time {
+    line-height: 26px;
+}
 
 
 
 /* intro2區 */
-.intro2{
+.intro2 {
     border:2px solid green;
-    height: 800px;
+    display: flex;
+}
+.intro2_img{
+    width: 70%;
     display: flex;
     justify-content: space-between;
+    padding-right: 192px;
 }
-.intro2 h2{
-    writing-mode: vertical-rl;
+.intro2_contents{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
 }
+
+
+
+
 /* intro3區 */
 .intro3{
     border:2px solid pink;
-    width: 1440px;
-    height: 800px;
     display: flex;
 }
-.intro3 h2{
-    writing-mode: vertical-rl;
+.intro3_contents {
+    display: flex;
+}
+.intro3_info {
+    margin: 243px 0 0 52px;
+    width: 40%;
+    letter-spacing: 2px;
+}
+.intro3_info_title {
+    font-size: 1.1rem;
+}
+.intro3_info_txt {
+    margin: 38px 0 80px 0;   /* 上右下左 */
+    line-height: 36px;
+    font-size: 1rem;
 }
 
 
@@ -222,6 +264,7 @@ body {
 /* footer區 */
 .footer{
 	border:2px solid orange;
+    background-color: var(--major-color);
 	color: var(--major-color2);
     display: flex;
     justify-content: center;
