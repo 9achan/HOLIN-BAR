@@ -162,74 +162,24 @@ body {
     /* height: 800px; */
 }
 
-
- /* container區 */
-.container{
-    border:2px solid red;
-    width: 1440px;
-    display: block;
-    background-color: var(--major-color);
-}
-/* container共用區 */
-.heading {
-    height: 20vh;
-    margin: 135px 0 0 80px;   /* 上右下左 */
+#aboutus1{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    font-size: 1.5rem;
-    line-height: 2.6rem;
-}
-.intro1_info_txt,
-.intro2_contents_txt {
-    margin: 100px 0 80px 0;   /* 上右下左 */
-    line-height: 36px;
-    font-size: 1rem;
-    letter-spacing: 2px;
-}
-
-/* intro1區 */
-.intro1 {
+    flex-direction: row-reverse;
     border:2px solid blue;
     display: flex;
     flex-direction: column;
     /* height: 800px; */
     /* padding:0px 80px; */
 }
-.intro1_contents {
-    display: flex;
-}
-.intro1_info {
-    margin: 0 80px;  /* 上下 左右 */
-    letter-spacing: 2px;
-}
-.intro1_info_access_holin,
-.intro1_info_access_addr {
-    margin: 0 0 16px 0;
-}
-.intro1_info_access_time {
-    line-height: 26px;
-}
-
-
-
-
-/* intro2區 */
-.intro2 {
+#aboutus2{
     border:2px solid green;
-    display: flex;
-}
-.intro2_img{
-    width: 70%;
+    width: 1440px;
+    height: 800px;
     display: flex;
     justify-content: space-between;
-    padding-right: 192px;
 }
-.intro2_contents{
-    display: flex;
-    flex-direction: column;
-    text-align: right;
+#aboutus2 h2{
+    writing-mode: vertical-rl;
 }
 
 
@@ -243,34 +193,14 @@ body {
 .intro3_contents {
     display: flex;
 }
-.intro3_info {
-    margin: 243px 0 0 52px;
-    width: 40%;
-    letter-spacing: 2px;
+#about3 h2{
+    writing-mode: vertical-rl;
 }
-.intro3_info_title {
-    font-size: 1.1rem;
-}
-.intro3_info_txt {
-    margin: 38px 0 80px 0;   /* 上右下左 */
-    line-height: 36px;
-    font-size: 1rem;
-}
-
-
-/* envtpic區 */
-
-
-
-/* footer區 */
 .footer{
 	border:2px solid orange;
     background-color: var(--major-color);
 	color: var(--major-color2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	/* text-align: center; */
+	text-align: center;
 	padding: 20px 0;
 }
 .footer a {
