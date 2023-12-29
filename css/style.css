@@ -171,7 +171,26 @@ body {
     /* height: 800px; */
     /* padding:0px 80px; */
 }
-#aboutus2{
+.intro1_contents {
+    display: flex;
+}
+.intro1_info {
+    margin: 0 80px;  /* 上下 左右 */
+    letter-spacing: 2px;
+}
+.intro1_info_access_holin,
+.intro1_info_access_addr {
+    margin: 0 0 16px 0;
+}
+.intro1_info_access_time {
+    line-height: 26px;
+}
+
+
+
+
+/* intro2區 */
+.intro2 {
     border:2px solid green;
     width: 1440px;
     height: 800px;

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<style>
+    .container_news{
+        margin-top: 85px;
+    }
+    .container_news h3{
+        font-size: large;
+        font-weight: 700;
+    }
+    /* .bignews{
+        width:100%;
+        padding:20px 0px;
+        justify-content: center; 
+    } */
+    .maincard {
+        /* border: red solid 2px; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* height: 100vh; */
+    }
+    .maincard img {
+        width: 350px;
+        height: 170px;
+    }
+    .maincard h2{
+        font-size: x-large;
+        font-weight: 700;
+    }
+    .mainnew{
+        /* border:blue solid 3px; */
+        display: flex;
+        flex-direction: row;
+    }
+    .mainnew_text{
+        display: flex;
+        flex-direction: column;
+        margin: 60px;
+        justify-content: flex-end;
+    }
+    .mainnew img{
+        margin: 60px;
+    }
+    .mainnew h3{
+        margin-bottom: 40px;
+    }
+    .newstable{
+        display: flex;
+        /* border:purple 3px solid; */
+        flex-wrap: wrap;
+        width:100%;
+        padding:20px 0px;
+        justify-content: center; 
+        /* align-content: center; */
+    }
+    .newstable .newscard{
+        /* width:48%;
+        margin: 1%; */
+        width: 560px;
+        margin: 80px;
+    }
+    .newstable .newscard h3,
+    .newstable .newscard p{
+        width: 560px;
+        padding: 10px;
+        line-height: 1.5;
+    }
+    .pagemark{
+        display: flex;
+        justify-content: center;
+    }
+    .pagemark img{
+        margin: 0 100px;
+    }
+    .pagenum{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 120px;
+        font-size: x-large;
+    }
+</style>
+
+<body>
+    <header class="topbar">
+        <h1 class="logo">
+            <a href="index.html">
+                <img src="./images/logo_b.svg" alt="holin logo">
+            </a>
+        </h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="booking.html">訂位</a></li>
+                <li><a href="menu.html">菜單</a></li>
+                <li class="user">
+                    <img src="./images/component/topbar-dark/user_d.svg" alt="user icon">
+                    <a href="members.html">會員</a>
+                </li>
+            </ul>
+            <ul class="icon">
+                <li>
+                    <a href="hamburger.html">
+                        <img src="./images/hamburger_b.svg" alt="holin hamburger"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 主要內容區 -->
+    <main>
+        <section class="container_news">
+            <div class="bignews">
+                <div class="maincard">
+                    <img src="./images/news/pattern4_wind.svg" alt="">
+                    <h2>最新消息</h2>
+                    <img src="./images/news/pattern4_wind.svg" alt="">
+                </div>
+                <div class="mainnew">
+                    <img src="./images/news/news1.jpg" alt="">
+                    <div class="mainnew_text">
+                        <h3>以Back To Shot 迎接 Back To School ！</h3>
+                        <p>2024.02.19 - 2024.03.03<br>
+                        只要每人平均消費超過$250，則能在離開前，以學生證一人換上一杯Shot，只要每人平均消費超過$500，則能在離開前，以學生證一人換上二杯Shot，以此類推！ </p>
+                    </div>  
+                </div>
+            </div>
+            <div class="newstable">
+                <div class="newscard c1">
+                    <img src="./images/news/news2.png" alt="">
+                    <h3>SHOW出你的攝影集！</h3>
+                    <p>2023.12.31<br>
+                        今晚河林將為大家準備相機和相紙，讓我們一起把2023年最後一晚好好記錄下來！
+                        活動內容：我們會安排攝影師對每一桌進行拍照，並且在2024來臨的那一刻進現場沖洗。(相片數量，先到先拍)
+                    </p>
+                </div>
+                <div class="newscard c2">
+                    <img src="./images/news/news3.png" alt="">
+                    <h3>愛喝酒的你/妳還不快揪朋友們一起來參與？！</h3>
+                    <p>2023.12.23 - 2023.12.24<br>
+                        今年聖誕酒精路跑，河林邀請你各位一起穿梭在台北各個角落、一起喝到茫、一起組隊玩遊戲！愛喝酒的你/妳還不快揪朋友們一起來參與？！***參加者需穿戴與綠色或三葉草相關的服裝或飾品。由小隊輔帶著大家一起穿梭在台北的各個角落，快來和我們一起同樂吧!!!
+                    </p>
+                </div>
+                <div class="newscard c3">
+                    <img src="./images/news/news4.png" alt="">
+                    <h3>Halloween DJ Night</h3>
+                    <p>2023.10.31<br>
+                        當天我們邀請了兩位DJ @mr_lobby & anicorn @reshueimeile 分別為Halloween帶來2組音樂，以80年代Disco & City
+                        Pop呈現小舞步音樂派對。
+                        ***Dress code：80年代服飾、精心裝扮的萬聖妝容
+                        ***活動時間：2023.10.31 pm10:00</p>
+                </div>
+                <div class="newscard c4">
+                    <img src="./images/news/news5.png" alt="">
+                    <h3>福虎祭aka今夏最荒誕拼酒賽事！</h3>
+                    <p>2023.07.23 - 2023.07.24<br>
+                        集美食、酒水、音樂、遊戲於一身的精釀嘉年華 aka今夏最荒誕拼酒賽事！最大贏家可獲得河林90-days-pass，未來一季讓你天天都能have fun！
+                        圖片上錯年度啦～真是sorry..在此開出bonus：祝河林闆娘生日快樂，立刻獲得河林特調乙杯
+                        年度限定活動，就等你耶</p>
+                </div>
+            </div>
+            <div class="pagemark">
+                <img src="./images/news/arrow_left.svg" alt="arrow_left">
+                <div class="pagenum">
+                    <p>1</p>
+                    <p>2</p>
+                </div>
+                <img src="./images/news/arrow_right.svg" alt="arrow_right">
+            </div>
+
+        </section>
+    </main>
+    <!-- 頁尾區 -->
+    <footer class="footer">
+        <a href="#">隱私政策</a>
+        <small>台北市中正區濟南路一段321號</small>
+        <small>Copyright &copy; 2023 河林. All rights reserved.</small>
+    </footer>
+
+</body>
+
+</html>
