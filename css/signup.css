@@ -77,29 +77,25 @@ body {
     --lesser-color2:rgba(53, 57, 56,0.7);
 }
 /* 共同設定 */
-.members{
-    /* border: red 2px solid; */
+.signup_group{
+    border: red 2px solid;
     /* width: 1440px; */
     display: flex;
 }
 
-/* #members section,
-#members form {
-    display: flex;
-} */
 
-#members form {
+.member_signup form {
     margin-left: 30px;
 }
 /* 圖片設定 */
 
 /* 左邊環境圖片 */
-.members .member_envi_pic {
+.signup_group .member_envi_pic {
 	display: flex;
 }
 /* 中間登入框 */
 
-.member_signin{
+.member_signup{
     width: 40%;
 	margin: 30px auto 10px;
     /* border: 2px var(--lesser-color2) solid; */
@@ -119,26 +115,26 @@ body {
         2px 2px 3px rgba(0, 0, 0, .2), /* 左邊陰影 */
         0 1px 3px rgba(0, 0, 0, .2); /* 上邊陰影 */
 }
-.member_signin>*{
+.member_signup>*{
     display: block;
 	width: 100%;
 }
-.member_signin h2{
+.member_signup h2{
     display: block;
     font-size: large;
     font-weight: 900;
     color: var(--major-color2);
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 
 }
-.member_signin label{
+.member_signup label{
     margin: 20px 0 10px 0;
 	font-size: 0.9rem;
 	letter-spacing: 0.05rem;
 	color:var(--major-color2);
 }
-.member_signin input{
+.member_signup input{
     padding: 10px;
 	font-size: 0.8rem;
 	letter-spacing: 0.05rem;
@@ -146,92 +142,55 @@ body {
 	background-color: var(--lesser-color);
 	border: none;
 }
-.member_signin button{
-    border-radius: 30px;
-	padding: 8px;
-	margin-top: 20px;
-	background-color:var(--major-color2);
-	color: var(--major-color);
-	letter-spacing: 0.1rem;
-	border: none;
-    align-items: center;
-    justify-content: center;
+/* 已經有帳號 */
+.alreadyacc-nextstep{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    /* margin-bottom: 10px; */
     text-decoration: none;
-    width: 50%;
+    color:var(--major-color2);
 }
-.member_signin a{
+.alreadyacc-nextstep a{
+    color:var(--major-color2);
+}
+
+/* .member_signup a{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 10px auto;
-	color: #1D201D;
+	color:var(--major-color2);
 	letter-spacing: 0.1rem;
 	font-size: 0.8rem;
-}
-.remember-forget{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* margin-bottom: 10px; */
-    text-decoration: none;
-}
-.rememberme{
-    margin-right: 10px;
-}
-.remember-forget a{
-    margin-left: auto;
-    margin-right: 10px;
-    display:block;
-    margin-top: 30px;
-    text-align: right;
-}
-.enter_box{
-    margin-top: 50px;
-}
-.enter_box a {
+} */
+.nextstep_btn a{
     border: 1px solid var(--major-color);
 	background-color: var(--major-color2);
 	border-radius: 30px;
 	padding: 5px;
-	margin: 15px auto;
-    color:var(--major-color);
+	margin: 10px auto;
+    color:var(--major-color1);
 	letter-spacing: 0.1rem;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items:center;
+	justify-content:center;
 	width: 55%;
 	text-decoration: none;
 }
-.button_sign{
-    margin-top: 100px;
-}
-.button_sign a{
-	border: 1px solid var(--major-color2);
-	background-color: #ffffff;
-	border-radius: 30px;
-	padding: 5px;
-	margin: 15px auto;
-	color:var(--major-color2);
-	letter-spacing: 0.1rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 55%;
-	text-decoration: none;
 
+.nextstep_btn span{
+    display: block;
+    color: var(--major-color);
 }
-.enter_box img{
-    /* padding-left: 2px; */
+
+.nextstep_btn img{
+    padding-left: 5px;
     width: 30px;
     height: 30px;
-    /* filter:var(--major-color); */
     filter: brightness(0) invert(1);
 }
-.button_sign img{
-    padding-right: 5px;
-    width: 30px;
-    height: 30px;
-}
+
 /* 右邊logo */
 .heading img{
     width: 48px;
