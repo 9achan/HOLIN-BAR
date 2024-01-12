@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking</title>
+    <link rel="stylesheet" href="/css/booking.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- 頁首區 -->
+    <header class="topbar">
+        <h1 class="logo">
+            <a href="index.html">
+                <img src="./images/logo_b.svg" alt="holin logo">
+            </a>
+        </h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="booking.html">訂位</a></li>
+                <li><a href="menu.html">菜單</a></li>
+                <li class="user">
+                    <img src="./images/component/topbar-dark/user_d.svg" alt="user icon">
+                    <a href="members.html">會員</a>
+                </li>
+            </ul>
+            <ul class="icon">
+                <li>
+                    <a href="hamburger.html">
+                        <img src="./images/hamburger_b.svg" alt="holin hamburger">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-box">
+            <div class="form-wrap">
+                <h2 class="mob">立即訂位</h2>
+                <div class="calender-panel">
+                    <div class="guests">
+                        <label for="guests">用餐人數</label>
+                        <div class="guests_counter">
+                            <button class="counter-btn" id="cnt-down" type="button">-</button>
+                            <input id="guestNo" type="text" name="guests" value="1" readonly/>
+                            <button class="counter-btn" id="cnt-up" type="button">+</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="info-titles">
+                            <label>預約日期</label>
+                            <p id="pickDate"></p>
+                        </div>
+                    </div>
+                    <a class="btn" href="#">搜尋</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="calender-wrapper-box">
+            <div class="calender-wrapper-deco">
+                <img src="images/booking/pattern5_deco.svg" alt="">
+                <img src="images/booking/pattern5_deco.svg" alt="">
+            </div>
+            <div class="calender-wrapper">
+                <div class="calender-title">
+                    <div class="left">&lt;</div>
+                    <p></p>
+                    <div class="right">&gt;</div>
+                </div>
+                <div class="days">
+                    <p>MON</p>
+                    <p>TUE</p>
+                    <p>WED</p>
+                    <p>THU</p>
+                    <p>FRI</p>
+                    <p>SAT</p>
+                    <p>SUN</p>
+                </div>
+                <div class="calender-content">
+                </div>
+            </div>
+            <div class="calender-wrapper-deco-txt">
+                <p>ハッピーパーティー</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾區 -->
+    <footer class="footer">
+        <a href="#">隱私政策</a>
+        <small>台北市中正區濟南路一段321號</small>
+        <small>Copyright &copy; 2023 河林. All rights reserved.</small>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/booking.js"></script>
+</body>
+
+</html>
