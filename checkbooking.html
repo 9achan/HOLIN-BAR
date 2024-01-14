@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/checkbooking.css">
+</head>
+
+<body>
+    <main class="checkbooking">
+        <!-- 左邊環境圖片 -->
+        <section class="member_envi_pic">
+            <img src="./images/members/bg4.png" alt="envi_pic">
+        </section>
+        <!-- 中間登入框 -->
+        <form name="checkbox" class="checkbox">
+            <h2>填寫訂位資訊</h2>
+            <h3>xxx 先生/小姐您好<br>以下是您的訂位資訊</h3>
+            <!-- 訂位時間 -->
+            <div class="timecheck">
+                <h3>詳細日期</h3>
+                <h3 class="timing">時間</h3>
+                <h3>人數</h3>
+            </div>
+            <!-- 姓名 -->
+            <label for="username">姓名</label>
+            <input type="text" name="username" id="username" title="請輸入姓名" placeholder="王大明" required autocomplete="on"
+                autofocus>
+            <!-- 電話 -->
+            <label for="tel">聯絡電話</label>
+            <input type="tel" name="tel" id="tel" title="請輸入連絡電話" placeholder="0987654321" multiple>
+
+            <!-- 訂位btn -->
+            <div class="booking_btn">
+                <a href="#">
+                    <span>訂位</span>
+                    <img src="./images/members/arrow_right.svg" alt="nextstep_arrow">
+                </a>
+            </div>
+        </form>
+        <!-- 右邊logo返回按鈕 -->
+        <section class="heading">
+            <a href="./index.html"><img src="./images/logo_b.svg" alt="河林"></a>
+        </section>
+    </main>
+</body>
+
+</html>
