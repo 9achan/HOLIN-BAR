@@ -1,0 +1,199 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap");
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 2;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*{
+	box-sizing: border-box; /* 不累加邊框和內距，間距還是會累加 */
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+body {
+	font-family:
+		/*西文*/
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+		/*中文*/
+		"蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+}
+
+:root{
+	/* 主色調 */
+	--major-color: #ededed;
+	--major-color2:#353938;
+	--major-color3:#bc9f77;
+	/* 輔助色調 */
+	--lesser-color:rgba(237, 237, 237,0.7);
+    --lesser-color2:rgba(53, 57, 56,0.7);
+}
+/* 共同設定 */
+.checkbooking{
+    border: red 2px solid;
+    /* width: 1440px; */
+    display: flex;
+	width: 100%;
+	/* height: 100vh; */
+}
+
+
+.checkbox form {
+    margin-left: 30px;
+}
+/* 圖片設定 */
+
+/* 左邊環境圖片 */
+.checkbooking .member_envi_pic {
+	display: flex;
+}
+/* 中間登入框 */
+
+.checkbox{
+    width: 40%;
+	margin: 30px auto 10px;
+    /* border: 2px var(--lesser-color2) solid; */
+    box-sizing: border-box;
+    padding: 20px;
+    /* background-image: url(./images/pattern6_frame2.svg); */
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    /* z-index: -1; */
+    border: 1px solid rgba(255, 255, 255, .8);
+	background-color: transparent;
+	/*取消瀏覽器預設的預設值*/
+	background-image: linear-gradient( rgba(255, 255, 255, .1), rgba(255, 255, 255, .6));
+	box-shadow:  2px 1px 1px rgba(255, 255, 255, .4),
+		inset  -1px -1px 1px rgba(255, 255, 255, .2),
+        2px 2px 3px rgba(0, 0, 0, .2), /* 左邊陰影 */
+        0 1px 3px rgba(0, 0, 0, .2); /* 上邊陰影 */
+}
+.checkbox>*{
+    display: block;
+	width: 100%;
+}
+.checkbox h2{
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--major-color2);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.checkbox h3{
+    text-align: center;
+    /* display: block; */
+}
+/* timecheck 框框 */
+.timecheck{
+    display: flex;
+    flex-direction: column;
+    border:var(--major-color2) 1px solid;
+    padding: 5px 0;
+    border-radius:20px ;
+    width: 40%;
+    margin: 20px auto 0 ;
+}
+.timing{
+    color: var(--major-color3);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.checkbox label{
+    margin: 20px 0 10px 0;
+	font-size: 0.9rem;
+	letter-spacing: 0.05rem;
+	color:var(--major-color2);
+}
+.checkbox input{
+    padding: 10px;
+	font-size: 0.8rem;
+	letter-spacing: 0.05rem;
+	border-radius: 2px;
+	background-color: var(--lesser-color);
+	border: none;
+}
+
+
+.booking_btn a{
+    border: 1px solid var(--major-color);
+	background-color: var(--major-color2);
+	border-radius: 30px;
+	padding: 5px;
+	margin: 80px auto 10px auto;
+    color:var(--major-color1);
+	letter-spacing: 0.1rem;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	width: 55%;
+	text-decoration: none;
+}
+
+.booking_btn span{
+    display: block;
+    color: var(--major-color);
+}
+
+.booking_btn img{
+    padding-left: 5px;
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+}
+
+/* 右邊logo */
+.heading img{
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+}
