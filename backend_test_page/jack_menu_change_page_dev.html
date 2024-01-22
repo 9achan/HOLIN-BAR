@@ -1,0 +1,99 @@
+<!-- menu_test.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        nav {
+            width: 200px;
+            background-color: #f1f1f1;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+        nav a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+            display: block;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background-color: #ddd;
+        }
+        main {
+            margin-left: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Menu Test Page</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="loadMemberInfo()">Load Member Info</a>
+        <!-- Add more menu items as needed -->
+    </nav>
+
+    <main>
+        <h2>Welcome to the Menu Test Page!</h2>
+        <p>This is the main content area. You can add more content here.</p>
+
+        <div id="memberInfo">
+            <!-- Member information will be displayed here -->
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Function to load member information using the stored user_id
+        async function loadMemberInfo() {
+            const userId = localStorage.getItem('user_id');
+            const token = localStorage.getItem('authToken');
+            const memberInfoContainer = document.getElementById('memberInfo');
+
+            // Check if _id or token is missing
+            if (!userId || !token) {
+                // Redirect to index.html
+                window.location.href = 'jack_login_dev.html';
+                return;
+            }
+
+            try {
+                const response = await axios.get(`http://localhost:5501/users/${userId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                const memberName = response.data.name;
+
+                // Display member information in the container
+                memberInfoContainer.innerHTML = `<p>Member Name: ${memberName}</p>`;
+            } catch (error) {
+                console.error('Failed to load member information:', error.response ? error.response.data : error.message);
+            }
+        }
+    </script>
+</body>
+</html>

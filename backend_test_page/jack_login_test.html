@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="login()">Login</button>
+
+        <p class="error-message" id="errorMessage"></p>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessageElement = document.getElementById('errorMessage');
+
+            try {
+                const response = await axios.post('http://localhost:5501/users/login', {
+                    name: username,
+                    password: password
+                });
+
+                const token = response.data.token;
+                console.log('Login successful. Token:', token);
+
+                // 將 token 存儲在 localStorage 中
+                localStorage.setItem('authToken', token);
+
+                // 登入成功，跳轉到首頁（這裡使用假定的首頁 URL）
+                window.location.href = '/home';
+            } catch (error) {
+                console.error('Login failed:', error.response ? error.response.data : error.message);
+
+                // 顯示登入錯誤提示
+                errorMessageElement.textContent = 'Invalid username or password.';
+            }
+        }
+    </script>
+    <!-- 在成功取得 token 後，將其存儲在 localStorage 中 -->
+<!-- <script>
+    async function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await axios.post('http://localhost:5501/users/login', {
+                name: username,
+                password: password
+            });
+
+            const token = response.data.token;
+            console.log('Login successful. Token:', token);
+
+            // 將 token 存儲在 localStorage 中
+            localStorage.setItem('authToken', token);
+
+            // 在這裡處理登入成功後的操作，例如導航到其他頁面
+        } catch (error) {
+            console.error('Login failed:', error.response ? error.response.data : error.message);
+
+            // 在這裡處理登入失敗後的操作
+        }
+    }
+</script> -->
+
+
+<!-- 在需要進行身份驗證的請求中，將 token 放入請求標頭中 
+<script>
+    async function authenticatedRequest() {
+        const token = localStorage.getItem('authToken');
+
+        try {
+            const response = await axios.get('http://example.com/some-protected-endpoint', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            // 在這裡處理成功的回應
+        } catch (error) {
+            console.error('Request failed:', error.response ? error.response.data : error.message);
+
+           // 在這裡處理失敗的回應
+        }
+    }
+</script>
+-->
+
+</body>
+</html>

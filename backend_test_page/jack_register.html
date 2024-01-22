@@ -1,0 +1,85 @@
+<!-- register.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="register()">Register</button>
+
+        <p class="error-message" id="errorMessage"></p>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function register() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessageElement = document.getElementById('errorMessage');
+
+            try {
+                const response = await axios.post('http://localhost:5501/users', {
+                    name: username,
+                    password: password
+                });
+
+                console.log('Registration successful.');
+
+                // 顯示註冊成功提示
+                alert('完成註冊');
+
+                // 導入到登入頁面
+                window.location.href = 'jack_login_dev.html';
+            } catch (error) {
+                console.error('Registration failed:', error.response ? error.response.data : error.message);
+
+                // 顯示註冊錯誤提示
+                errorMessageElement.textContent = 'Registration failed. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
