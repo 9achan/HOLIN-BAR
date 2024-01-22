@@ -57,8 +57,32 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         async function login() {
-            // Your existing login function code
-            // ...
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessageElement = document.getElementById('errorMessage');
+
+            try {
+                const response = await axios.post('http://localhost:5501/users/login', {
+                    name: username,
+                    password: password
+                });
+
+                const token = response.data.token;
+                const _id = response.data._id;
+                console.log('Login successful. Token:', token);
+
+                // 將 token 存儲在 localStorage 中
+                localStorage.setItem('authToken', token);
+                localStorage.setItem('user_id',_id);
+
+                // 登入成功，導入到 menu_test.html
+               window.location.href = 'menu_change_page_dev.html';
+            } catch (error) {
+                console.error('Login failed:', error.response ? error.response.data : error.message);
+
+                // 顯示登入錯誤提示
+                errorMessageElement.textContent = 'Invalid username or password.';
+            }
         }
 
         function redirectToRegister() {
