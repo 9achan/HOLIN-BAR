@@ -1,0 +1,198 @@
+@use '../variable/' as *;
+@use '../function/' as *;
+
+
+.hamburger {
+    border: none;
+    background-color: transparent;
+}
+
+/* 主要內容區 */
+.container_news {
+    background-color: $major-color-1;
+    @include mobile {
+        width: 100%;
+    }
+    h3 {
+        font-size: $fs-xl;
+        font-weight: 700;
+    }
+
+    .maincard {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+
+            // width: 350px;
+            // height: 170px;
+            @include mobile {
+                width: 140px;
+                height: 70px;
+                visibility: hidden;
+            }
+        }
+
+        h2 {
+            font-size: $heading-size-s;
+            font-weight: 700;
+
+            @include mobile {
+                display: block;
+                justify-content: center;
+            }
+        }
+    }
+
+    .mainnew {
+        display: flex;
+        flex-direction: row;
+
+        @include pad {
+            display: flex;
+            flex-direction: column;
+        }
+        img {
+            margin: 3%; //60px
+        }
+        .mainnew_text {
+            display: flex;
+            flex-direction: column;
+            margin: 4%; //60px
+            justify-content: flex-end;
+        }
+
+        p {
+            @include mutiple-lines;
+            -webkit-line-clamp: 5;
+        }
+    }
+
+    .newstable {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 20px 0px;
+        justify-content: center;
+
+        .newscard {
+            width: 40%;
+            margin: 8%;
+
+            @include web {
+                display: flex;
+                flex-wrap: wrap;
+                width: calc(50% - 160px);
+                margin: 80px;
+            }
+
+            @include pad {
+                display: flex;
+                flex-wrap: wrap;
+                width: 80%;
+            }
+
+            h3,
+            p {
+                width: 95%;
+                // padding: 10px;
+                line-height: 1.8;
+                @include mutiple-lines;
+                -webkit-line-clamp: 4;
+            }
+        }
+    }
+
+    .pagemark {
+        cursor: pointer;
+        width: 80%;
+        height: 10vh;
+        margin: 0 auto;
+
+        .arrow-box {
+            display: flex;
+            justify-content: center;
+
+            @include pad {
+                width: 100%;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        .pagenum {
+            width: 80%;
+            display: block;
+            justify-content: center;
+
+            p {
+                font-weight: 400;
+                font-size: $fs-l;
+
+                @include pad {
+                    display: block;
+                    padding: 0 5%;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// @include pad
+// {
+//     margin-bottom: 10px;
+// }
+// @include mobile{
+//     width: 100%;
+// }
+
+
+
+/* footer區 */
+.footer {
+    border: 2px solid orange;
+    background-color: $major-color-2;
+    color: $major-color-1;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 40px 0;
+
+    @include mobile {
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    a {
+        color: $major-color-1;
+        text-decoration: none;
+
+        @include pad {
+            font-size: $fs-s;
+        }
+
+        @include mobile {
+            padding-bottom: 4px;
+        }
+    }
+
+    small {
+        padding-left: 40px;
+
+        @include pad {
+            font-size: $fs-s;
+        }
+
+        @include mobile {
+            padding: 3px 0;
+        }
+    }
+}
