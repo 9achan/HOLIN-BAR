@@ -27,10 +27,8 @@ $ls-m: .1rem !default;
 $ls-s: .05rem;
 $ls-none: 0rem;
 
-// letter-spacing: .7rem;
-// letter-spacing: 3px;  0.1875rem
-// letter-spacing: 2px;  0.125rem
-// letter-spacing: .1rem; 
-// letter-spacing: .05rem;
-// letter-spacing: 0;
-// letter-spacing: 0.1em;
+// 字體 font-family -----
+$ff-tc-serif: "Noto Serif TC", serif;
+$ff-tc-sans: "Noto Sans TC", sans-serif;
+$ff-en-serif: "Playfair Display", serif;
+$ff-en-sans: "Open Sans", sans-serif;
