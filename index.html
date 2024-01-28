@@ -4,44 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holin河林</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>index-rwd+scss</title>
+    <!-- bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- 自定義的CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <!-- 頁首區 -->
-    <header class="topbar">
-        <h1 class="logo">
-            <a href="index.html">
-                <img src="./images/logo_b.svg" alt="holin logo">
-            </a>
-        </h1>
-        <nav>
-            <ul class="menu">
-                <li><a href="booking.html">訂位</a></li>
-                <li><a href="menu.html">菜單</a></li>
-                <li class="user">
-                    <img src="./images/component/topbar-dark/user_d.svg" alt="user icon">
-                    <a href="members.html">會員</a>
-                </li>
-            </ul>
-            <ul class="icon">
-                <li>
-                    <a href="hamburger.html">
-                        <img src="./images/hamburger_b.svg" alt="holin hamburger">
-                    </a>
-                </li>
-            </ul>
+    <header>
+        <!-- navbar 導覽列(bs) -->
+        <nav class="navbar navbar-expand bg-body-tertiary">
+            <div class="container-fluid">
+                <!-- 品牌名稱logo -->
+                <a class="navbar-brand" href="index.html#">
+                    <img src="images/logo_b.svg" alt="holin logo">
+                </a>
+                <!-- 主選單 -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">訂位</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">菜單</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> <img src="./images/component/topbar-dark/user_d.svg"
+                                    alt="user icon">會員</a>
+                        </li>
+                    </ul>
+                    <!-- 漢堡按鈕 -->
+                    <button class="hamburger" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+            </div>
         </nav>
     </header>
 
-    <!-- 主要內容區 -->
     <main>
         <section class="banner">
-            <img src="./images/index/bg1.png" alt="">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/index/banner-1.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/index/banner-2.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/index/banner-3.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="container">
-            <div class="intro1">
+        <section class="container-fluid" style="border: 1px solid red;">
+            <div class="intro1 mb-5" style="border: 1px solid blue;">
                 <h2 class="heading">河<br>の<br>林</h2>
                 <div class="intro1_contents">
                     <div class="intro1_info">
@@ -55,33 +78,30 @@
                             <li class="intro1_info_access_holin">河林</li>
                             <li class="intro1_info_access_addr">100台北市中正區濟南路一段321號</li>
                             <li class="intro1_info_access_time">
-                                19時～02時<br>バー不定休
+                                19時&sim;02時<br>バー不定休
                             </li>
                         </ul>
                     </div>
                     <div class="intro1_img">
                         <div class="intro1_img_large">
-                            <img src="./images/index/aboutus1-1.jpg"  alt="">
-                            <!-- width="650px" height="416px" -->
+                            <img src="./images/index/aboutus1-1.jpg" class="img-fluid" alt="">
                         </div>
-                        <!-- <img src="./images/index/pattern1_wave.svg" alt=""> -->
                         <div class="intro1_img_small">
-                            <img src="./images/index/aboutus1-2.jpg"  alt="">
-                            <!-- width="400px" height="360px" -->
+                            <img src="./images/index/aboutus1-2.jpg" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="intro2">
+            <div class="intro2" style="border: 1px solid orange;">
                 <div class="intro2_img">
                     <div class="intro2_img_item">
-                        <img src="./images/index/aboutus2-1.png" alt="">
+                        <img src="./images/index/aboutus2-1.png" class="img-fluid" alt="">
                     </div>
                     <div class="intro2_img_item">
-                        <img src="./images/index/aboutus2-2.png" alt="">
+                        <img src="./images/index/aboutus2-2.png" class="img-fluid" alt="">
                     </div>
                     <div class="intro2_img_item">
-                        <img src="./images/index/aboutus2-3.png" alt="">
+                        <img src="./images/index/aboutus2-3.png" class="img-fluid" alt="">
                     </div>
                 </div>
                 <div class="intro2_contents">
@@ -97,7 +117,7 @@
                     </p>
                 </div>
             </div>
-            <div class="intro3">
+            <div class="intro3" style="border: 1px solid lawngreen;">
                 <h2 class="heading">ハ<br>ッ<br>ピ<br>ー<br>パ<br>ー<br>テ<br>ィ<br>ー</h2>
                 <div class="intro3_contents">
                     <div class="intro3_info">
@@ -115,14 +135,14 @@
                         </p>
                     </div>
                     <div class="intro3_img">
-                        <img src="./images/index/aboutus3-1.jpg" alt="" class="intro3_img_small">
-                        <img src="./images/index/aboutus3-2.jpg" alt="" class="intro3_img_large">
+                        <img src="./images/index/aboutus3-1.jpg" alt="" class="intro3_img_large">
+                        <img src="./images/index/aboutus3-2.jpg" alt="" class="intro3_img_small">
                     </div>
                 </div>
             </div>
         </section>
-        <section class="envtpic">
-            <img src="./images/index/bg2.png" alt="">
+        <section class="envtpic" style="border: 2px solid palevioletred;">
+            <img src="./images/index/index_bg.jpg" class="img-fluid" alt="">
         </section>
     </main>
 
@@ -132,6 +152,11 @@
         <small>台北市中正區濟南路一段321號</small>
         <small>Copyright &copy; 2023 河林. All rights reserved.</small>
     </footer>
+
+    <!-- bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
