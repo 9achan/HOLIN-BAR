@@ -94,11 +94,13 @@ body {
 /* 左邊環境圖片 */
 .checkpopup .member_envi_pic {
 	display: flex;
+    height: 100vh;
+    width: 40%;
 }
 /* 中間登入框 */
 
 .popupbox{
-    width: 50%;
+    width: 40%;
 	margin: 30px auto 10px;
     /* border: 2px var(--lesser-color2) solid; */
     box-sizing: border-box;
@@ -118,7 +120,7 @@ body {
         0 1px 3px rgba(0, 0, 0, .2); /* 上邊陰影 */
 }
 .popupbox>*{
-    display: block;
+    /* display: block; */
 	width: 100%;
 }
 .popupbox h2{
@@ -132,7 +134,7 @@ body {
     background-color: var(--major-color3);
     border-radius: 5px;
     width: 80%;
-    margin: 20px auto;
+    margin: 70px auto;
     padding: 10px 0;
 }
 .popupbox h3{
