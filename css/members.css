@@ -76,29 +76,29 @@ body {
 	--lesser-color:rgba(237, 237, 237,0.7);
     --lesser-color2:rgba(53, 57, 56,0.7);
 }
+
 /* 共同設定 */
 .members{
-    /* border: red 2px solid; */
-    /* width: 1440px; */
     display: flex;
 }
-
-/* #members section,
-#members form {
-    display: flex;
-} */
 
 #members form {
     margin-left: 30px;
 }
-/* 圖片設定 */
 
 /* 左邊環境圖片 */
-.members .member_envi_pic {
+/* .members .member_envi_pic {
 	display: flex;
+} */
+.envi_pic{
+	width: 80%;
+	height: 100vh;
 }
-/* 中間登入框 */
+.envi_pic img{
+	width: 100%;
+}
 
+/* 中間登入框 */
 .member_signin{
     width: 40%;
 	margin: 30px auto 10px;
@@ -224,7 +224,6 @@ body {
     /* padding-left: 2px; */
     width: 30px;
     height: 30px;
-    /* filter:var(--major-color); */
     filter: brightness(0) invert(1);
 }
 .button_sign img{
@@ -233,8 +232,8 @@ body {
     height: 30px;
 }
 /* 右邊logo */
-.heading img{
+/* .heading img{
     width: 48px;
     height: 48px;
     margin: 10px;
-}
+} */
