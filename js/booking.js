@@ -27,7 +27,7 @@ $(function () {
     // });
 });
 
-
+/* 日曆區 */
 var currentMonth = new Date().getMonth();
 var currentYear = new Date().getFullYear();
 var clickedDays = 0;
@@ -246,7 +246,7 @@ function monthClick(e) {
             pickDate = new Date(currentYear, currentMonth, pickDateIndex);
         }
         */
-       
+
         /* if (endDate > pickDate) {
             var clicked = $(".clicked");
             $(clicked).not(clicked[0]).removeClass("clicked");
@@ -355,3 +355,17 @@ $("#make-booking").on("click", function () {
     }
 });
 */
+
+
+
+/* 點擊搜尋跳轉 */
+function saveData() {
+    var data1 = document.getElementById("guestNo").value;
+    var data2 = document.getElementById("pickDate").value;
+    var data3 = document.getElementById("pickTime").value;
+
+    sessionStorage.setItem("person", [data1]); // 使用 sessionStorage 存储数据
+    sessionStorage.setItem("date", [data2]); // 使用 sessionStorage 存储数据
+    sessionStorage.setItem("time", [data3]); // 使用 sessionStorage 存储数据
+    window.location.href = "bookingJumpPage.html"; // 跳转到下一页
+}
