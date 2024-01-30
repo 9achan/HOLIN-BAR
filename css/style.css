@@ -1379,6 +1379,11 @@ main {
   }
 }
 
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .hamburger {
   border: none;
   background-color: transparent;
