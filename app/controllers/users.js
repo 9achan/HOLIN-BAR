@@ -28,6 +28,9 @@ class UserCtl {
     ctx.verifyParams({
       name: { type: "string", required: true },
       password: { type: "string", required: true },
+      email: { type: "string", required: true, format: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ },
+      telephone: { type: "string", required: false, format: /^\d{10,11}$/ },
+      birthday: { type: "string", required: false, format: /^\d{8}$/ },
       // age: { type: "number", required: false },
     });
     //再新增會員時會透過findOne去抓取name看看用戶名稱是否存在,有存在就回傳409error
@@ -47,7 +50,10 @@ class UserCtl {
   async update(ctx) {
     ctx.verifyParams({
       name: { type: "string", required: false },
-      password: { type: "string", required: false },
+    password: { type: "string", required: false },
+    email: { type: "string", required: false, format: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ },
+    telephone: { type: "string", required: false, format: /^\d{10,11}$/ },
+    birthday: { type: "string", required: false, format: /^\d{4}-\d{2}-\d{2}$/ },
     });
     const user = await User.findByIdAndUpdate(ctx.params.id, ctx.request.body);
     if (!user) {
