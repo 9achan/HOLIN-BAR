@@ -1,0 +1,322 @@
+@use '../variable/' as *;
+@use '../function/' as *;
+
+.bookingJumpPageBody {
+    align-items: center;
+    background-color: $major-color-1;
+    background: url("../images/members/bg4-50-01.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    z-index: -1;
+    font-family: $ff-tc-sans;
+
+    .bookingJumpPageContainer {
+        background-color: $major-color-1;
+        box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+            0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+        height: 580px;
+        max-width: 800px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .container--bookingInfo {
+            left: 0;
+            opacity: 0;
+            width: 50%;
+            z-index: 1;
+        }
+
+        &.right-panel-active .container--bookingInfo {
+            animation: show 0.6s;
+            opacity: 1;
+            transform: translateX(100%);
+            z-index: 5;
+        }
+
+        .container--bookingChk {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        &.right-panel-active .container--bookingChk {
+            transform: translateX(100%);
+        }
+
+        &__overlay {
+            height: 100%;
+            left: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            transition: transform 0.6s ease-in-out;
+            width: 50%;
+            z-index: 100;
+
+            @include pad {
+                display: none;
+            }
+        }
+
+        &.right-panel-active .bookingJumpPageContainer__overlay {
+            transform: translateX(-100%);
+        }
+
+        .overlay {
+            background-color: $lesser-color-2;
+            background: url("../images/members/glass.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            left: -100%;
+            position: relative;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+            width: 200%;
+        }
+
+        &.right-panel-active .overlay {
+            transform: translateX(50%);
+        }
+
+        .overlay__panel {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+            width: 50%;
+        }
+
+        .overlay--left {
+            transform: translateX(-20%);
+        }
+
+        &.right-panel-active .overlay--left {
+            transform: translateX(0);
+        }
+
+        .overlay--right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .bookingJumpPageBtn {
+            background-color: $major-color-3;
+            border-radius: 20px;
+            border: .5px solid $major-color-3;
+            color: $major-color-1;
+            cursor: pointer;
+            font-size: $fs-m;
+            font-weight: $fw-bold;
+            letter-spacing: 0.1rem;
+            padding: 0.9rem 4rem;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .bookingJumpPageContainer__form {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: all 0.6s ease-in-out;
+            width: 50%;
+
+            .form {
+                background-color: $major-color-1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                text-align: center;
+                padding: 0 3rem;
+                height: 100%;
+            }
+
+            .bookingInfoBox {
+                >* {
+                    display: block;
+                    width: 100%;
+                }
+
+                h2 {
+                    display: block;
+                    font-size: $heading-size-s;
+                    font-weight: $fw-medium;
+                    color: $major-color-2;
+                    text-align: center;
+                    letter-spacing: 3px;
+                    text-align: center;
+                    margin: 10% auto 0;
+                    padding: 3% 0;
+                }
+
+                h3 {
+                    text-align: center;
+                    color: $major-color-2;
+                    /* display: block; */
+                }
+
+                .userinfo {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    label {
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        margin-bottom: 3%;
+                        font-size: $fs-s;
+                        letter-spacing: 0.05rem;
+                        color: $major-color-2;
+                    }
+
+                    input {
+                        width: 100%;
+                        display: flex;
+                        padding: 3% 0 3% 2%;
+                        margin-bottom: 10%;
+                        font-size: $fs-s;
+                        letter-spacing: 0.05rem;
+                        border-radius: 2px;
+                        border: none;
+                    }
+                }
+            }
+
+            .bookingChkBox {
+                display: flex;
+                justify-content: space-around;
+
+                >* {
+                    /* display: block; */
+                    width: 100%;
+                }
+
+                h2 {
+                    display: block;
+                    font-size: $heading-size-s;
+                    font-weight: $fw-medium;
+                    color: $major-color-1;
+                    letter-spacing: 3px;
+                    text-align: center;
+                    background-color: $major-color-3;
+                    border-radius: 6px;
+                    margin: 10% auto 0;
+                    padding: 3% 0;
+                }
+
+                h3 {
+                    text-align: center;
+                    color: $major-color-2;
+                }
+
+                .holininf {
+                    color: $major-color-2;
+
+                    .holintext {
+                        font-weight: $fw-medium;
+                        font-size: $fs-m;
+                        line-height: $lh-s;
+                    }
+
+                    .tel-add {
+                        font-size: $fs-s;
+                        line-height: $lh-xs;
+                    }
+                }
+
+                .bonus {
+                    h3 {
+                        color: $major-color-3;
+                        background-color: transparent;
+                    }
+                }
+
+                .activity {
+                    a {
+                        width: 100%;
+                        margin: 0 auto 8%;
+                        border-radius: 30px;
+                        letter-spacing: 0.1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        /* width: 55%; */
+                        text-decoration: none;
+
+                        h3 {
+                            color: $major-color-2;
+                            background-color: transparent;
+                        }
+
+                        img {
+                            padding-left: 0px;
+                            width: 50px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+
+            @include pad {
+                width: 100%;
+            }
+
+            .timecheck {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                color: $major-color-2;
+                border: $major-color-2 1px solid;
+                border-radius: 20px;
+                width: 50%;
+                height: 15%;
+                line-height: $lh-s;
+            }
+        }
+
+        @include pad {
+            flex-direction: column;
+        }
+    }
+
+    @keyframes show {
+
+        0%,
+        49.99% {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        50%,
+        100% {
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+}

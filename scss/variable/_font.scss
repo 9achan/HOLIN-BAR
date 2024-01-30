@@ -18,6 +18,7 @@ $lh-xl: 2.5rem;
 $lh-l: 2.25rem;
 $lh-m: 2rem !default;
 $lh-s: 1.5rem;
+$lh-xs: 1.2rem;
 
 
 // 字距 letter-spacing -----
@@ -32,3 +33,8 @@ $ff-tc-serif: "Noto Serif TC", serif;
 $ff-tc-sans: "Noto Sans TC", sans-serif;
 $ff-en-serif: "Playfair Display", serif;
 $ff-en-sans: "Open Sans", sans-serif;
+
+
+// 字重 font-weight -----
+$fw-bold: bold;  // 700
+$fw-medium: medium; // 500
