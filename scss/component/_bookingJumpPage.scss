@@ -19,8 +19,8 @@
         background-color: $major-color-1;
         box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
             0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
-        height: 580px;
-        max-width: 800px;
+        height: $max-height;
+        max-width: $max-width;
         overflow: hidden;
         position: relative;
         width: 100%;
@@ -274,11 +274,17 @@
                             background-color: transparent;
                         }
 
-                        img {
-                            padding-left: 0px;
-                            width: 50px;
-                            height: 30px;
+                        figure {
+                            width: 20%;
+                            height: 100%;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
                         }
+
                     }
                 }
             }
