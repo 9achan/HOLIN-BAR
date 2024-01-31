@@ -1,0 +1,249 @@
+@use '../variable/' as *;
+@use '../function/' as *;
+
+
+
+// section {
+//     height: calc(100vh - 80px);
+// }
+
+main {
+    background-color: $major-color-1;
+}
+
+
+.banner_menu {
+
+    .deco_plus_carousel {
+        width: 100%;
+        display: flex;
+        height: calc(100vh - 90px - 20vh); // 20vh是箭頭區的高度
+
+        /* 裝飾字區(DRINKS) */
+        .drinks_deco {
+            width: 20%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 5%;
+
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+
+            font-family: "Open Sans", sans-serif;
+            font-size: 4rem;
+            font-weight: $fw-bold;
+            letter-spacing: .7rem;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--major-color3);
+            /* For WebKit browsers (Safari, Chrome) */
+
+            @include pad {
+                width: 100%;
+                padding-bottom: 0;
+                padding-right: 5%;
+
+                writing-mode: horizontal-tb;
+                transform: rotate(0deg);
+            }
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        /* 輪播區 */
+        .menu-carousel {
+
+            .carousel-item {
+                display: flex;
+
+                .carousel-item__caption {
+                    @include mobile {
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        text-align: center;
+                        height: auto;
+                    }
+                }
+
+                .carousel-item__image {
+                    @include mobile {
+                        width: 80%;
+                    }
+                }
+
+                @include mobile {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            @include pad {
+                width: 100%;
+                height: calc(100vh - 90px - 15vh - 30%);
+            }
+
+            @include mobile {
+                margin: 0;
+                height: calc(100vh - 90px - 15vh - 10%);
+            }
+
+        }
+
+        @include pad {
+            flex-wrap: wrap-reverse;
+        }
+    }
+}
+
+
+
+/* section .pages_menu區 */
+.pages_menu {
+    background-color: $major-color-1;
+    background-image: url(../images/menu/bg_brown.svg);
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-position: bottom;
+    background-size: 100%;
+    height: calc(100vh - 150px);
+
+
+    .menu_category {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 3% auto;
+        padding: 0;
+
+
+        li {
+            width: 15%;
+            position: relative;
+            cursor: pointer;
+
+            h4 {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                font-family: $ff-tc-serif;
+                font-weight: $fw-bold;
+                font-size: $heading-size-s;
+
+                @include pad {
+                    font-size: $fs-xl;
+                }
+
+                @include mobile {
+                    font-size: .75rem;
+                }
+            }
+
+            figure {
+                width: 100%;
+                height: 100%;
+                display: flex;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            @include mobile {
+                width: 17%;
+            }
+
+        }
+
+        @include pad {
+            width: 90%;
+        }
+
+        @include mobile {
+            width: 95%;
+            justify-content: space-around;
+        }
+    }
+
+
+
+    /* 詳細菜單區 */
+    .menu_table {
+        width: 70%;
+        display: flex;
+        margin: 3% auto;
+
+        .product-info {
+            width: 100%;
+
+            th,
+            td {
+                border-bottom: 1px solid #ddd;
+                text-align: left;
+                font-family: $ff-en-sans;
+                font-size: $fs-xl;
+                width: 10%;
+                padding: 2%;
+
+                @include pad {
+                    border: none;
+                    width: 5%;
+                    padding-right: 0;
+                    padding: 3% 1%;
+                    font-size: $fs-l;
+                }
+
+                @include mobile {
+                    font-size: .7rem;
+                    padding: 6% 1%;
+                }
+
+            }
+
+            .th {
+                font-family: $ff-tc-sans;
+            }
+            
+            .price {
+                text-align: right;
+                padding: 2%;
+            }
+        }
+
+        #category2,
+        #category3,
+        #category4,
+        #category5 {
+            display: none;
+        }
+
+        @include web {
+            margin: 2% auto;
+        }
+
+        @include pad {
+            width: 80%;
+        }
+
+        @include mobile {
+            width: 85%;
+        }
+    }
+
+    @include web {
+        height: 80vh;
+    }
+
+    @include pad {
+        height: 56vh;
+    }
+
+    @include mobile {
+        height: 50vh;
+    }
+}

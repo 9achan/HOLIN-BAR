@@ -1,0 +1,40 @@
+// 字級規範===============================================
+
+// 標題字大小 heading-size -----
+$heading-size-l: 2rem;  // 32px
+$heading-size-m: 1.75rem;  // 28px
+$heading-size-s: 1.5rem;  // 24px
+
+
+// 文字大小 font-size -----
+$fs-xl: 1.35rem;   // 21.6px
+$fs-l: 1.2rem;   // 19.2px
+$fs-m: 1rem !default;  // 16px
+$fs-s: .8rem;
+
+
+// 行高 line-height -----
+$lh-xl: 2.5rem;
+$lh-l: 2.25rem;
+$lh-m: 2rem !default;
+$lh-s: 1.5rem;
+$lh-xs: 1.2rem;
+
+
+// 字距 letter-spacing -----
+$ls-xl: .7rem;
+$ls-l: .125rem;  /* 2px */
+$ls-m: .1rem !default;
+$ls-s: .05rem;
+$ls-none: 0rem;
+
+// 字體 font-family -----
+$ff-tc-serif: "Noto Serif TC", serif;
+$ff-tc-sans: "Noto Sans TC", sans-serif;
+$ff-en-serif: "Playfair Display", serif;
+$ff-en-sans: "Open Sans", sans-serif;
+
+
+// 字重 font-weight -----
+$fw-bold: bold;  // 700
+$fw-medium: medium; // 500
