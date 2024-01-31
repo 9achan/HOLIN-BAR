@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/signup.css">
+</head>
+
+<body>
+    <div class="container right-panel-active">
+        <!-- Sign Up -->
+        
+        <div class="container__form container--signup">
+            <form id="registrationForm" action="http://localhost:5501/users/" method="POST" onsubmit="return validateForm()">
+                <h2 class="form__title">註冊會員</h2>
+                <!-- 姓名 -->
+                <label for="username">姓名</label>
+                <input type="text" name="username" id="username" title="請輸入姓名" placeholder="王大明" required
+                    autocomplete="on" autofocus>
+                <!-- 生日(選填) -->
+                <label for="birthday">生日</label>
+                <input type="date" name="birthday" id="birthday" title="請選擇生日">
+                <!-- 電話 -->
+                <label for="tel">聯絡電話</label>
+                <input type="tel" name="tel" id="tel" title="請輸入連絡電話" placeholder="0987654321" multiple
+                    autocomplete="on">
+                <!-- 信箱 -->
+                <label for="username">信箱</label>
+                <input type="username" name="username" id="username" title="請輸入Eusername"
+                    placeholder="example@yourusername.com" size="50px">
+                <!-- 密碼 -->
+                <label for="password-u">密碼</label>
+                <input type="password" name="password-u" id="password-u" title="請輸入密碼" placeholder="請輸入8位數包含英文和數字"
+                    autocomplete="on" size="50px">
+                <!-- 密碼確認 -->
+                <label for="password-c">確認密碼</label>
+                <input type="password" name="password-c" id="password-c" title="請再次輸入密碼" placeholder="請再次輸入密碼"
+                    autocomplete="on" size="50px">
+                <!-- 註冊btn -->
+                <button class="btn signup">註冊</button>
+            </form>
+        </div>
+        <!-- Login In -->
+        <div class="container__form container--signin">
+            <form action="#" class="form" id="loginForm">
+                <h2 class="form__title">登入</h2>
+                <!-- 信箱 -->
+                <!-- <input type="eusername" placeholder="Eusername" class="input" /> -->
+                <!-- <label for="email">信箱</label>
+                <input type="email" name="email" id="email" title="請輸入Email" placeholder="example@yourusername.com" required> -->
+                <label for="login_username">信箱</label>
+                <input type="email" id="login_username" name="login_username" title="請輸入Email"
+                    placeholder="example@yourusername.com" required>
+                <!-- 密碼 -->
+                <!-- <input type="password" placeholder="Password" class="input" /> -->
+                <label for="password">密碼</label>
+                <input type="password" name="password" id="password" title="請輸入密碼" placeholder="請輸入8位數包含英文和數字"
+                    autocomplete="on" required>
+                <!-- 記住我 -->
+                <a href="#" class="link">忘記密碼?</a>
+                <!-- 登入btn -->
+                <button type="button" onclick="login()" class="btn signin">登入</button>
+                <!-- google -->
+                <button type="button" class="btn google ">
+                    <!-- <h3>Sign in with Google</h3> -->
+                    Sign in with Google
+                </button>
+            </form>
+        </div>
+        <!-- Overlay -->
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    <button class="btn" id="signIn">登入</button>
+                </div>
+                <div class="overlay__panel overlay--right">
+                    <button type="button" class="btn" id="signUp">註冊</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function login() {
+            const login_username = document.getElementById('login_username').value;
+            const password = document.getElementById('password').value;
+            const errorMessageElement = document.getElementById('errorMessage');
+
+            try {
+                const response = await axios.post('http://localhost:5501/users/login', {
+                    name: login_username,
+                    password: password
+                });
+
+                const token = response.data.token;
+                const _id = response.data._id;
+                console.log('Login successful. Token:', token);
+
+                // 將 token 存儲在 localStorage 中
+                localStorage.setItem('authToken', token);
+                localStorage.setItem('user_id', _id);
+
+                // 登入成功，導入到 menu_test.html
+                window.location.href = './backend_test_page/jack_menu_change_page_dev.html';
+            } catch (error) {
+                console.error('Login failed:', error.response ? error.response.data : error.message);
+
+                // 顯示登入錯誤提示
+                errorMessageElement.textContent = 'Invalid username or password.';
+            }
+        }
+
+        function redirectToRegister() {
+            // Redirect to the register page
+            window.location.href = 'jack_register.html';
+        }
+    </script>
+    <script>
+        function validateForm() {
+          var name = document.getElementById("name").value;
+          var password = document.getElementById("password").value;
+          var email = document.getElementById("email").value;
+          var telephone = document.getElementById("telephone").value;
+          var birthday = document.getElementById("birthday").value;
+        
+          // 檢查姓名是否為空
+          if (name.trim() === "") {
+            alert("請輸入姓名");
+            return false;
+          }
+          if (password.length < 8 || password.length > 24) {
+            alert("密碼長度應在8到24個字符之間");
+            return false;
+          }
+          // 檢查電子郵件格式
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            alert("請輸入有效的電子郵件地址");
+            return false;
+          }
+        
+          // 檢查電話號碼格式
+          var telephonePattern = /^[0-9]{10}$/;
+          if (!telephonePattern.test(telephone)) {
+            alert("請輸入有效的電話號碼（10位數字）");
+            return false;
+          }
+        
+          // 檢查生日格式
+          var birthdayPattern = /^\d{8}$/;
+          if (!birthdayPattern.test(birthday)) {
+            alert("請輸入有效的生日（YYYYMMDD）");
+            return false;
+          }
+        
+          // 表單驗證通過，提交表單
+          return true;
+        }
+    <script src="./js/signup.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
