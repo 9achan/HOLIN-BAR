@@ -32,20 +32,25 @@
     /* box1 */
     .logo-pic_box {
         width: 100%;
-
+        figure{
+            display: flex;
+            justify-content: space-around;
+        }
         .ho {
-            margin-bottom: 7px;
+            margin-bottom: 28px;
         }
 
         .lin {
-            text-align: right;
+            // text-align: right;
             margin-top: 7px;
+            margin-left: 75px;
         }
 
         p {
-            margin: 15px 0 15px 0;
+            margin: 50px 0 30px 181px;
             line-height: 2.5;
             font-weight: 900;
+            display: block;
         }
     }
 

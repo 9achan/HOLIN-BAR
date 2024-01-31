@@ -1372,17 +1372,22 @@ main {
 .aboutus .logo-pic_box {
   width: 100%;
 }
+.aboutus .logo-pic_box figure {
+  display: flex;
+  justify-content: space-around;
+}
 .aboutus .logo-pic_box .ho {
-  margin-bottom: 7px;
+  margin-bottom: 28px;
 }
 .aboutus .logo-pic_box .lin {
-  text-align: right;
   margin-top: 7px;
+  margin-left: 75px;
 }
 .aboutus .logo-pic_box p {
-  margin: 15px 0 15px 0;
+  margin: 50px 0 30px 181px;
   line-height: 2.5;
   font-weight: 900;
+  display: block;
 }
 .aboutus .aboutus_textgroup {
   width: 100%;
