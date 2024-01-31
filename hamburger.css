@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+}
+
+img {
+    z-index: -1;
+}
+
+#popupContainer{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    background-image: url(../images/index/index_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 5%;
+    width: 5%;
+    height: 10%;
+    cursor: pointer;
+}
+
+.close::before,
+.close::after {
+    content: '';
+    width: 50%;
+    height: 4px;
+    background-color: #ededed;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    margin-left:1rem;
+    /* padding-left: 1rem; */
+ 
+}
+
+.close::before {
+    transform: rotate(45deg);
+}
+
+.close::after {
+    transform: rotate(-45deg);
+}
+
+
+.button-row {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 6rem;
+
+}
+
+.button-row button {
+    width: 100%;
+    height: 25vh;
+    border: none;
+    /* border-radius: 50%; */
+    /* margin: 0 100px;
+  padding: 10px; */
+    font-size: 16px;
+    background-color: transparent;
+    position: relative;
+
+}
+
+button a {
+    text-decoration: none;
+    display: block;
+    justify-items: center;
+    color: #ededed;
+    font-size: 24px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-top: 4rem;
+}
+
+/* 新增媒體查詢，調整樣式以適應小螢幕 */
+@media (max-width: 576px) {
+    .popup-content {
+        width: 100%;
+        height: 100vh;
+        /* 調整視窗寬度 */
+    }
+
+    .button-row {
+        flex-direction: column;
+        /* 在小螢幕時將按鈕列排成垂直方向 */
+        margin: 0;
+    }
+
+    img {
+        display: none;
+    }
+    /* a{
+        margin-top: 0;
+    } */
+    .button-row button {
+        width: 100%;
+        /* 讓按鈕佔滿整個寬度 */
+        margin: 3.5rem 0;
+        /* 垂直間距 */
+        /* padding: 10px; */
+        /* 添加內部填充 */
+        text-align: center;
+        /* 文字居中 */
+        height: 100%;
+    }
+
+    /* .popup-container {
+    background-color: rgba(0, 0, 0, 0.5);
+  } */
+
+    /* .popup-content {
+    border-radius: 0;
+  } */
+    /* 
+  .button-row button {
+
+    border-radius: 0;
+    width: 100%;
+    height: 100px;
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 16px;
+  } */
+}
