@@ -10,12 +10,15 @@
 /* 主要內容區 */
 .container_news {
     background-color: $major-color-1;
+    margin-top: 80px;
+    font-family: $ff-tc-sans;
+
     @include mobile {
         width: 100%;
     }
     h3 {
         font-size: $fs-xl;
-        font-weight: 700;
+        font-weight: $fw-bold;
     }
 
     .maincard {

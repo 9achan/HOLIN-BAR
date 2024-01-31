@@ -316,6 +316,7 @@
 /* envtpic區 */
 .envtpic {
     width: 100%;
+    background-color: $major-color-1;
 
     .envtpic img {
         width: 100%;
@@ -331,50 +332,6 @@
     color: $major-color-1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 40px 0;
-
-    @include mobile {
-        width: 100%;
-        flex-direction: column;
-
-    }
-
-    a {
-        color: $major-color-1;
-        text-decoration: none;
-
-        @include pad {
-            font-size: $fs-s;
-        }
-
-        @include mobile {
-            padding-bottom: 4px;
-        }
-    }
-
-    small {
-        padding-left: 40px;
-
-        @include pad {
-            font-size: $fs-s;
-        }
-
-        @include mobile {
-            padding: 3px 0;
-        }
-    }
-}
-
-
-
-/* footer區 */
-.footer {
-    border: 2px solid orange;
-    background-color: $major-color-2;
-    color: $major-color-1;
-    display: flex;
-    justify-content:center;
     align-items: center;
     padding: 40px 0;
 

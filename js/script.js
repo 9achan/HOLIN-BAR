@@ -70,3 +70,25 @@ function showCategory(category) {
     var selectedCategory = document.getElementById(category);
     selectedCategory.style.display = 'block';
 }
+
+
+// hamburger
+document.addEventListener("DOMContentLoaded", function () {
+    const popupButton = document.getElementById("popupButton");
+    const popupContainer = document.getElementById("popupContainer");
+    const closeButton = document.getElementById("closeButton");
+
+    popupButton.addEventListener("click", function () {
+        popupContainer.style.display = "block";
+    });
+
+    closeButton.addEventListener("click", function () {
+        popupContainer.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === popupContainer) {
+            popupContainer.style.display = "none";
+        }
+    });
+});
