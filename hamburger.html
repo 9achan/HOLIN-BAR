@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Popup Example</title>
+  <link rel="stylesheet" href="./hamburger.css">
+
+</head>
+
+<body>
+  <button id="popupButton">顯示彈出視窗</button>
+
+  <div id="popupContainer" class="popup-container">
+    <div class="popup-content">
+      <span class="close" id="closeButton">&times;</span>
+      <div class="button-row">
+        <button>
+          <a href="/index.html">首頁</a>
+          <img src="./images/hamburger/pattern1_wave_white.svg" alt="" width="180px" height="170px">
+        </button>
+        <button>
+          <a href="./news.html">最新消息</a>
+          <img src="./images/hamburger/pattern1_wave_white.svg" alt="" width="180px" height="170px">
+        </button>
+        <button>
+          <a href="./aboutus.html">關於我們</a>
+          <img src="./images/hamburger/pattern1_wave_white.svg" alt="" width="180px" height="170px">
+        </button>
+      </div>
+      <div class="button-row">
+        <button>
+          <a href="./signup.html">會員登入</a>
+          <img src="./images/hamburger/pattern1_wave_white.svg" alt="" width="180px" height="170px"> 
+        </button>
+        <button>
+          <a href="./menu.html">菜單</a>
+          <img src="./images/hamburger/pattern1_wave_white.svg" alt="" width="180px" height="170px"> 
+        </button>
+        <button>
+          <a href="./booking.html">一般訂位</a>
+          <img src="./images/hamburger/pattern1_wave_white.svg" alt="" width="180px" height="170px"> 
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const popupButton = document.getElementById("popupButton");
+      const popupContainer = document.getElementById("popupContainer");
+      const closeButton = document.getElementById("closeButton");
+
+      popupButton.addEventListener("click", function () {
+        popupContainer.style.display = "block";
+      });
+
+      closeButton.addEventListener("click", function () {
+        popupContainer.style.display = "none";
+      });
+
+      window.addEventListener("click", function (event) {
+        if (event.target === popupContainer) {
+          popupContainer.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+
+</html> -->
