@@ -20,7 +20,7 @@
     // width: 1440px;
     margin: 0 auto;
 
-    // margin-top: 80px;
+    margin-top: 80px;
     @include pad {
         width: 100%;
     }
@@ -30,48 +30,48 @@
     }
 
     /* box1 */
-    // .logo-pic_box {
-    //     width: 100%;
+    .logo-pic_box {
+        width: 100%;
 
-    //     .ho {
-    //         margin-bottom: 7px;
-    //     }
-
-    //     .lin {
-    //         text-align: right;
-    //         margin-top: 7px;
-    //     }
-
-    //     p {
-    //         margin: 15px 0 15px 0;
-    //         line-height: 2.5;
-    //         font-weight: 900;
-    //     }
-    // }
-
-    // box1test
-    .logo-pic_box{
-        display: flex;
-        flex-direction: column;
-        .ho{
-            display: flex;
+        .ho {
+            margin-bottom: 7px;
         }
-        .lin{
-            position: relative;
-            display: flex;
-            .two{
-                margin-left: 10px;
-            }
-            .three{
-                margin-left: 30px;
-                width: 58vw;
-            }
-            .superlin{
-                position: absolute;
-                right: 0;
-            }          
+
+        .lin {
+            text-align: right;
+            margin-top: 7px;
+        }
+
+        p {
+            margin: 15px 0 15px 0;
+            line-height: 2.5;
+            font-weight: 900;
         }
     }
+
+    // box1test
+    // .logo-pic_box{
+    //     display: flex;
+    //     flex-direction: column;
+    //     .ho{
+    //         display: flex;
+    //     }
+    //     .lin{
+    //         position: relative;
+    //         display: flex;
+    //         .two{
+    //             margin-left: 10px;
+    //         }
+    //         .three{
+    //             margin-left: 30px;
+    //             width: 58vw;
+    //         }
+    //         .superlin{
+    //             position: absolute;
+    //             right: 0;
+    //         }          
+    //     }
+    // }
 
     /* box2 */
     .aboutus_textgroup {
