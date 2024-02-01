@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOLIN booking</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <!-- <link rel="stylesheet" href="./css/bookingJumpPage.css"> -->
+</head>
+
+<body>
+    <div class="bookingJumpPageBody">
+        <div class="bookingJumpPageContainer right-panel-active">
+            <!-- bookingInfo -->
+            <div class="bookingJumpPageContainer__form container--bookingInfo">
+                <form action="#" class="form bookingInfoBox" id="bookingForm1">
+                    <h2>填寫訂位資訊</h2>
+                    <h3>先生/小姐您好<br>以下是您的訂位資訊</h3>
+                    <!-- 訂位時間 -->
+                    <div class="timecheck">
+                        <!-- 這裡將顯示表單數據 -->
+                        <p id="displayDataPerson"></p>
+                        <p id="displayDataDate"></p>
+                        <p id="displayDataTime"></p>
+                    </div>
+                    <div class="userinfo">
+                        <!-- 姓名 -->
+                        <label for="bookingUserName">姓名</label>
+                        <input type="text" name="bookingUserName" id="bookingUserName" title="請輸入姓名" placeholder="王大明"
+                            required autocomplete="on" autofocus>
+                        <!-- 電話 -->
+                        <label for="bookingTel">聯絡電話</label>
+                        <input type="tel" name="bookingTel" id="bookingTel" title="請輸入連絡電話" placeholder="0987654321"
+                            multiple required>
+                    </div>
+                </form>
+            </div>
+
+            <!-- bookingChk -->
+            <div class="bookingJumpPageContainer__form container--bookingChk">
+                <!-- 確定訂位區 -->
+                <form action="#" class="form bookingChkBox" id="bookingForm2">
+                    <h2>您已訂位成功!</h2>
+                    <div class="holininf">
+                        <h3 class="holintext">河林 HoLin</h3>
+                        <h3 class="tel-add">02-2345-6789<br>台北市中正區濟南路一段321號</h3>
+                    </div>
+                    <h3>先生/小姐您好<br>以下是您的訂位資訊</h3>
+                    <!-- 訂位時間 -->
+                    <div class="timecheck">
+                        <!-- 這裡將顯示表單數據 -->
+                        <p id="displayDataPerson-1"></p>
+                        <p id="displayDataDate-1"></p>
+                        <p id="displayDataTime-1"></p>
+                    </div>
+                    <!-- 領優惠券 -->
+                    <div class="bonus">
+                        <a href="./signup.html">
+                            <h3>還不是會員? 馬上加入會員領取優惠券</h3>
+                        </a>
+                    </div>
+                    <!-- 活動資訊 -->
+                    <div class="activity">
+                        <a href="./news.html">
+                            <h3>活動資訊&nbsp;</h3>
+                            <figure>
+                                <img src="./images/members/arrow_right.svg" alt="">
+                            </figure>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <!-- Overlay -->
+            <div class="bookingJumpPageContainer__overlay">
+                <div class="overlay">
+                    <div class="overlay__panel overlay--left">
+                        <button type="button" class="bookingJumpPageBtn" id="bookingInfo">訂位</button>
+                    </div>
+                    <div class="overlay__panel overlay--right">
+                        <a href="index.html" class="bookingJumpPageBtn">河林</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/bookingJumpPage.js"></script>
+</body>
+
+</html>

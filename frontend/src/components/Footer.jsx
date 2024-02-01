@@ -5,9 +5,9 @@ const Footer = () => {
         <footer class="footer">
             <a href="#">隱私政策</a>
             <small>台北市中正區濟南路一段321號</small>
-            <small>Copyright &copy; 2023 河林. All rights reserved.</small>
+            <small>Copyright &copy; 2024 河林. All rights reserved.</small>
         </footer>
     )
 }
 
-export default Footer
+export default Footer;
