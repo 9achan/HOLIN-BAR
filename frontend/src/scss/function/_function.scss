@@ -1,0 +1,35 @@
+@mixin pad {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin web {
+    @media (min-width: 1441px) {
+        @content;
+    }
+}
+
+@mixin mutiple-lines {
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 可省略，為瀏覽器預設值 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    // -webkit-line-clamp: 1; 
+}
+
+@mixin single-line {
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* 父元素也要定義overflow:hidden */
+}
