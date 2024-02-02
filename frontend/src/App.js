@@ -1,5 +1,6 @@
 import SignUp from "./pages/SignUp";
-// import './css/signup.css';
+import './css/SignUp.css';
+
 
 
 

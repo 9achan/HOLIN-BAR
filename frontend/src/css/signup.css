@@ -107,7 +107,7 @@ video {
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-body {
+.signupbox {
     align-items: center;
     background-color: var(--major-color-1);
     background: url("../../public/images/members/bg4-50-01.png");
