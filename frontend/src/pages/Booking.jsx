@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const monthNames = [
   "January",
@@ -29,6 +29,7 @@ const Booking = () => {
     setGuestNo((prevGuestNo) => Math.max(prevGuestNo - 1, 1));
   };
 
+  // 日曆區
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [clickedDays, setClickedDays] = useState(0);
@@ -86,13 +87,12 @@ const Booking = () => {
   };
 
   const monthClick = (day) => {
+    const newPickDate = new Date(currentYear, currentMonth, day);
+    setPickDate(newPickDate.toString().split(" ").slice(0, 4).join(" "));
     if (clickedDays === 0) {
-      const newPickDate = new Date(currentYear, currentMonth, day);
-      setPickDate(newPickDate.toString().split(" ").slice(0, 4).join(" "));
-      setSelectedDates([...selectedDates, newPickDate]);
+      setSelectedDates([newPickDate]);
     } else {
-      setPickDate("");
-      setSelectedDates([]);
+      setSelectedDates([...selectedDates, newPickDate]);
     }
     setClickedDays((prevClickedDays) => prevClickedDays + 1);
   };
@@ -108,7 +108,6 @@ const Booking = () => {
       setCurrentMonth(currentMonth + increment);
     }
   };
-
 
   return (
     <>
@@ -142,9 +141,7 @@ const Booking = () => {
               </select>
             </div>
           </div>
-          <button className="btn">
-            搜尋
-          </button>
+          <button className="btn">搜尋</button>
         </div>
       </section>
 

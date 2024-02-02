@@ -58,7 +58,7 @@ const Navbar = () => {
       </nav>
 
       <div id="popupContainer" className="popup-container">
-        <div className="popup-content">
+        {/* <div className="popup-content">
           <span className="close" id="closeButton"></span>
           <div className="button-row">
             <button>
@@ -118,7 +118,7 @@ const Navbar = () => {
               />
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

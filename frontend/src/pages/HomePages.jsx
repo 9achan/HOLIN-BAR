@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 const HomePages = () => {
   return (
     <>
-      <section className="banner">
+      <section className="banner" style={{"margin-top": "80px"}}>
         <div
           id="carouselExampleSlidesOnly"
           className="carousel slide"
@@ -14,21 +14,21 @@ const HomePages = () => {
           <div className="carousel-inner">
             <figure className="carousel-item active">
               <img
-                src="images/index/banner-1.png"
+                src="./images/index/banner-1.png"
                 className="d-block w-100"
                 alt="..."
               />
             </figure>
             <figure className="carousel-item">
               <img
-                src="images/index/banner-2.png"
+                src="./images/index/banner-2.png"
                 className="d-block w-100"
                 alt="..."
               />
             </figure>
             <figure className="carousel-item">
               <img
-                src="images/index/banner-3.png"
+                src="./images/index/banner-3.png"
                 className="d-block w-100"
                 alt="..."
               />

@@ -398,15 +398,17 @@ body {
   }
 }
 
-main {
+.menu_main {
   background-color: #ededed;
 }
 
+.banner_menu {
+  margin-top: 80px;
+}
 .banner_menu .deco_plus_carousel {
   width: 100%;
   display: flex;
   height: calc(100vh - 90px - 20vh);
-  /* 裝飾字區(DRINKS) */
   /* 輪播區 */
 }
 .banner_menu .deco_plus_carousel .drinks_deco {
@@ -630,7 +632,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 26vh;
+  height: 24vh;
 }
 .search-box .calender-panel {
   width: 70%;
@@ -956,7 +958,7 @@ main {
   align-items: center;
   padding: 1% 0;
   width: 100%;
-  height: calc(100vh - 80px - 20vh);
+  height: calc(100vh - 80px - 24vh);
 }
 .calender-wrapper-box .calender-wrapper-deco {
   width: 20%;
@@ -1054,6 +1056,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 @media (max-width: 576px) {
   .calender-wrapper-box .calender-title .left,
