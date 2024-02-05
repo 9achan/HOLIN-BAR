@@ -46,10 +46,10 @@ const Navbar = () => {
     setIsLoggedIn(false);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  // const [isOpen, setIsOpen] = useState(false);
+  // const closeMenu = () => {
+  //   setIsOpen(false);
+  // };
 
   return (
     <>
@@ -116,7 +116,7 @@ const Navbar = () => {
         </div>
       </nav>
       {/* 漢堡v2 */}
-      <div id="popupContainer" className="popup-container">
+      {/* <div id="popupContainer" className="popup-container">
         <label id="hamburger_label" htmlFor="hamburger_input">
           <input
             type="checkbox"
@@ -200,7 +200,7 @@ const Navbar = () => {
             </div>
           </div>
         </label>
-      </div>
+      </div> */}
       {/* <div id="popupContainer" className="popup-container">
         <div className="popup-content">
           <span className="close" id="closeButton"></span>

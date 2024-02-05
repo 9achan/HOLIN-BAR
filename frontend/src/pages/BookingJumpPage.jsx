@@ -17,7 +17,25 @@ const BookingJumpPage = () => {
     }
   }, [isBookingInfoBtn]);
 
+  const [bookingUserName, setBookingUserName] = useState("");
+  const [bookingTel, setBookingTel] = useState("");
   const handleBookingClick = () => {
+    // 檢查姓名是否為空
+    if (!bookingUserName) {
+      alert("請填寫姓名");
+      return;
+    }
+    // 檢查聯絡電話是否為空
+    if (!bookingTel) {
+      alert("請填寫聯絡電話");
+      return;
+    }
+
+    const phoneRegex = /^\d{10}$/; // 十位数字
+    if (!phoneRegex.test(bookingTel)) {
+      alert("請填寫有效的電話號碼");
+      return;
+    }
     setIsBookingInfoBtn(false);
   };
 
@@ -61,7 +79,7 @@ const BookingJumpPage = () => {
               </div>
               <div className="userinfo">
                 {/* <!-- 姓名 --> */}
-                <label htmlFor="bookingUserName">姓名</label>
+                <label htmlFor="bookingUserName">姓名*</label>
                 <input
                   type="text"
                   name="bookingUserName"
@@ -69,11 +87,14 @@ const BookingJumpPage = () => {
                   title="請輸入姓名"
                   placeholder="王大明"
                   required
-                  autocomplete="on"
-                  autofocus
+                  autoComplete="on"
+                  autoFocus
+                  onChange={(e) => {
+                    setBookingUserName(e.target.value);
+                  }}
                 />
                 {/* <!-- 電話 --> */}
-                <label htmlFor="bookingTel">聯絡電話</label>
+                <label htmlFor="bookingTel">聯絡電話*</label>
                 <input
                   type="tel"
                   name="bookingTel"
@@ -82,6 +103,9 @@ const BookingJumpPage = () => {
                   placeholder="0987654321"
                   multiple
                   required
+                  onChange={(e) => {
+                    setBookingTel(e.target.value);
+                  }}
                 />
               </div>
             </form>
