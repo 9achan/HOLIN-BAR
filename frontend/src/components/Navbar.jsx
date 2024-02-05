@@ -46,42 +46,10 @@ const Navbar = () => {
     setIsLoggedIn(false);
   };
 
-  // const [memberName, setMemberName] = useState("");
-
-  // useEffect(() => {
-  //   const loadMemberInfo = async () => {
-  //     const userId = localStorage.getItem("user_id");
-  //     const token = localStorage.getItem("authToken");
-
-  //     // 检查是否缺少 user_id 和 token
-  //     if (!userId && !token) {
-  //       return;
-  //     }
-
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:5501/users/${userId}`,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${token}`,
-  //           },
-  //         }
-  //       );
-
-  //       const memberName = response.data.name;
-
-  //       // 設定會員名稱
-  //       setMemberName(memberName);
-  //     } catch (error) {
-  //       console.error(
-  //         "載入會員資料失敗:",
-  //         error.response ? error.response.data : error.message
-  //       );
-  //     }
-  //   };
-
-  //   loadMemberInfo();
-  // }, []);
+  const [isOpen, setIsOpen] = useState(false);
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -132,7 +100,7 @@ const Navbar = () => {
                 )}
               </li>
             </ul>
-            <button
+            {/* <button
               className="hamburger"
               id="popupButton"
               type="button"
@@ -143,13 +111,98 @@ const Navbar = () => {
               aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
-            </button>
+            </button> */}
           </div>
         </div>
       </nav>
-
+      {/* 漢堡v2 */}
       <div id="popupContainer" className="popup-container">
-        {/* <div className="popup-content">
+        <label id="hamburger_label" htmlFor="hamburger_input">
+          <input
+            type="checkbox"
+            id="hamburger_input"
+            checked={isOpen}
+            onChange={() => setIsOpen(!isOpen)}
+          />
+          <span className="hamburger_span">
+            <span className="hamburger_span2"></span>
+          </span>
+          <div id="button_rowbox" className={isOpen ? "open" : ""}>
+            <div className="button-row">
+              <button>
+                <Link to="/" onClick={closeMenu}>
+                  首頁
+                </Link>
+                <img
+                  src="./images/hamburger/pattern1_wave_white.svg"
+                  alt=""
+                  width="180px"
+                  height="170px"
+                />
+              </button>
+              <button>
+                <Link to="/news" onClick={closeMenu}>
+                  最新消息
+                </Link>
+                <img
+                  src="./images/hamburger/pattern1_wave_white.svg"
+                  alt=""
+                  width="180px"
+                  height="170px"
+                />
+              </button>
+              <button>
+                <Link to="/aboutus" onClick={closeMenu}>
+                  關於我們
+                </Link>
+                <img
+                  src="./images/hamburger/pattern1_wave_white.svg"
+                  alt=""
+                  width="180px"
+                  height="170px"
+                />
+              </button>
+            </div>
+            <div className="button-row">
+              <button>
+                <Link to="/signup" onClick={closeMenu}>
+                  會員登入
+                </Link>
+                <img
+                  src="./images/hamburger/pattern1_wave_white.svg"
+                  alt=""
+                  width="180px"
+                  height="170px"
+                />
+              </button>
+              <button>
+                <Link to="/menu" onClick={closeMenu}>
+                  菜單
+                </Link>
+                <img
+                  src="./images/hamburger/pattern1_wave_white.svg"
+                  alt=""
+                  width="180px"
+                  height="170px"
+                />
+              </button>
+              <button>
+                <Link to="/booking" onClick={closeMenu}>
+                  一般訂位
+                </Link>
+                <img
+                  src="./images/hamburger/pattern1_wave_white.svg"
+                  alt=""
+                  width="180px"
+                  height="170px"
+                />
+              </button>
+            </div>
+          </div>
+        </label>
+      </div>
+      {/* <div id="popupContainer" className="popup-container">
+        <div className="popup-content">
           <span className="close" id="closeButton"></span>
           <div className="button-row">
             <button>
@@ -209,8 +262,8 @@ const Navbar = () => {
               />
             </button>
           </div>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
     </>
   );
 };
