@@ -37,28 +37,11 @@ const Navbar = () => {
     }
   };
 
-  useEffect((userId) => {
-    // 發送GET請求獲取用戶數據
-    axios
-      .get(`http://localhost:5501/users/${userId}`)
-      .then((response) => {
-        // 設定用戶名稱
-        setUsername(response.data.name);
-        // 設定用戶已登入
-        setIsLoggedIn(true);
-      })
-      .catch((error) => {
-        console.error("Error fetching user data:", error);
-        // 設定用戶未登入
-        setIsLoggedIn(false);
-      });
-  }, []); // 空數組表示只在元件載入時執行一次
-
   const handleLogout = () => {
-    // 清除 localStorage 中的数据
+    // 清除 localStorage 中的數據
     localStorage.removeItem("user_id");
     localStorage.removeItem("authToken");
-    // 重置状态
+    // 重置狀態
     setUsername("");
     setIsLoggedIn(false);
   };
