@@ -1,0 +1,177 @@
+/* @import url("https://fonts.googleapis.com/css?family=Cutive+Mono"); */
+/* *,
+*:before,
+*:after {
+  box-sizing: border-box;
+} */
+
+/* html {
+  font-size: 18px;
+} */
+
+.popup-container {
+  font-size: 1.2em;
+  line-height: 1.6;
+  background: transparent;
+  /* 初始底色 */
+  overflow-x: hidden;
+  /* 加入 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#hamburger_label .hamburger_span {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  z-index: 100;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border-radius: 50% 50% 50% 50%;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
+  cursor: pointer;
+}
+#hamburger_label .hamburger_span2 {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  background: #000;
+  display: block;
+  transform-origin: center;
+  transition: 0.5s ease-in-out;
+}
+#hamburger_label .hamburger_span2:after, 
+#hamburger_label .hamburger_span2:before {
+  transition: 0.5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+#hamburger_label .hamburger_span2:before {
+  top: -10px;
+}
+#hamburger_label .hamburger_span2:after {
+  bottom: -10px;
+}
+#hamburger_input {
+  display: none;
+}
+#hamburger_input:checked + .hamburger_span {
+  box-shadow: 0 0 0 100vw #fff, 0 0 0 100vh #fff; 
+  /* 跳轉瞬間的顏色 */
+  border-radius: 0;
+}
+#hamburger_input:checked + .hamburger_span .hamburger_span2 {
+  transform: rotate(45deg);
+}
+#hamburger_input:checked + .hamburger_span .hamburger_span2:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+#hamburger_input:checked + .hamburger_span .hamburger_span2:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+#hamburger_input:checked + .hamburger_span + #button_rowbox {
+  /* height: 70vh; */
+  height: 80%;
+  width: 100%;
+  transition: 1s ease-in;
+  opacity: 1;
+  /* border: 1px solid rgba(255, 255, 255, 0.091);
+  border-radius: 5px;
+  background-color: rgba(164, 164, 164, 0.8);
+  box-shadow: 0 0 10px 1px rgb(249, 248, 248);
+  backdrop-filter: blur(15px); */
+  /* background-image: url(../images/hamburger/bg3.png); */
+  background-image: url(../images/hamburger/envi6-01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid rgba(255, 255, 255, 0.091);
+  /* border-radius: 10rem; */
+
+}
+
+#button_rowbox {
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* 加入 */
+.button-row {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 7% 0;
+}
+/* 加入 */
+.button-row button {
+  /* width: 100%; */
+  height: 20vh;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  position: relative;
+  margin: 0 5rem;
+}
+/* .button-row button:before,.button-row button:after{
+  transition: 1s ease-in;
+} */
+
+#hamburger_label a {
+  /* margin-bottom: 1em;
+  display: block;
+  color: #000;
+  text-decoration: none; */
+
+  /* 加入 */
+  text-decoration: none;
+  display: block;
+  justify-items: center;
+  color:#ededed;
+  font-size: 24px;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin-top: 4rem;
+  z-index: 999;
+}
+
+/* .square {
+  position: absolute;
+  top: 90%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+} */
+
+/* .square {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: none; 
+  transition: 0.5s ease-in-out; 
+}  */
+
+/* #hamburger_input:checked + .hamburger_span + #button_rowbox + .square {
+  display: block; 
+} */
