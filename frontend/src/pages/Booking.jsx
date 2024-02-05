@@ -36,22 +36,22 @@ const Booking = () => {
   const [pickDate, setPickDate] = useState("");
   const [selectedDates, setSelectedDates] = useState([]);
 
-  const formatDates = (dates) => {
-    if (dates != null) {
-      return dates.map((date) => {
-        return (
-          dayNames[date.getDay()] +
-          "-" +
-          date.getDate() +
-          "-" +
-          monthNames[date.getMonth()] +
-          "-" +
-          date.getFullYear()
-        );
-      });
-    }
-    return null;
-  };
+  // const formatDates = (dates) => {
+  //   if (dates != null) {
+  //     return dates.map((date) => {
+  //       return (
+  //         dayNames[date.getDay()] +
+  //         "-" +
+  //         date.getDate() +
+  //         "-" +
+  //         monthNames[date.getMonth()] +
+  //         "-" +
+  //         date.getFullYear()
+  //       );
+  //     });
+  //   }
+  //   return null;
+  // };
 
   const daysInMonth = (month) => new Date(currentYear, month + 1, 0).getDate();
 
@@ -111,6 +111,24 @@ const Booking = () => {
 
   const [pickTime, setPickTime] = useState("");
   const saveData = () => {
+    // 檢查用餐人數是否為空
+    if (!guestNo) {
+      alert("請填寫用餐人數");
+      return;
+    }
+
+    // 檢查預約日期是否為空
+    if (!pickDate) {
+      alert("請選擇預約日期");
+      return;
+    }
+
+    // 檢查預約時間是否為空
+    if (!pickTime) {
+      alert("請選擇預約時間");
+      return;
+    }
+    
     sessionStorage.setItem("person", guestNo);
     sessionStorage.setItem("date", pickDate);
     sessionStorage.setItem("time", pickTime);

@@ -653,6 +653,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 24vh;
+  background-color: #ededed;
 }
 .search-box .calender-panel {
   width: 70%;
@@ -898,6 +899,7 @@ body {
   padding: 1% 0;
   width: 100%;
   height: calc(100vh - 80px - 24vh);
+  background-color: #ededed;
 }
 .calender-wrapper-box .calender-wrapper-deco {
   width: 20%;
