@@ -58,7 +58,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className={`signupBox ${formData.isSignUp ? 'right-panel-active' : ''}`}>
+      <div className={`signupbox ${formData.isSignUp ? 'right-panel-active' : ''}`}>
         <div className="container">
           {/*註冊表單 */}
           <div className="container__form container--signup">
@@ -128,7 +128,7 @@ const SignUp = () => {
           <div className="container__form container--signin">
             <form action="#" className="form" id="loginForm" onSubmit={handleFormSubmit}>
               <h2 className="form__title">登入</h2>
-              <label htmlFor="login_username">信箱</label>
+              <label htmlFor="login_username">帳號</label>
               <input
                 type="text"
                 id="name"
