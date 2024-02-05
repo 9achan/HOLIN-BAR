@@ -1417,4 +1417,163 @@ body {
     opacity: 1;
     z-index: 5;
   }
+}
+
+.hamburger {
+  border: none;
+  background-color: transparent;
+}
+
+/* 主要內容區 */
+.container_news {
+  background-color: #ededed;
+  margin-top: 80px;
+  font-family: "Noto Sans TC", sans-serif;
+}
+@media (max-width: 576px) {
+  .container_news {
+    width: 100%;
+  }
+}
+.container_news h3 {
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+.container_news .maincard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 992px) {
+  .container_news .maincard figure {
+    width: 35%;
+  }
+}
+@media (max-width: 576px) {
+  .container_news .maincard figure {
+    width: 30%;
+    height: 70px;
+    visibility: hidden;
+  }
+}
+.container_news .maincard h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media (max-width: 992px) {
+  .container_news .maincard h2 {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 576px) {
+  .container_news .maincard h2 {
+    font-size: 1.5rem;
+    display: block;
+    justify-content: center;
+  }
+}
+.container_news .mainnew {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 992px) {
+  .container_news .mainnew {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.container_news .mainnew img {
+  margin: 3%;
+}
+.container_news .mainnew .mainnew_text {
+  display: flex;
+  flex-direction: column;
+  margin: 4%;
+  justify-content: flex-end;
+}
+.container_news .mainnew p {
+  /* 多行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 可省略，為瀏覽器預設值 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+.container_news .newstable {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px 0px;
+  justify-content: center;
+}
+.container_news .newstable .newscard {
+  width: 40%;
+  margin: 8%;
+}
+@media (min-width: 1441px) {
+  .container_news .newstable .newscard {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(50% - 160px);
+    margin: 80px;
+  }
+}
+@media (max-width: 992px) {
+  .container_news .newstable .newscard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+}
+.container_news .newstable .newscard h3,
+.container_news .newstable .newscard p {
+  width: 95%;
+  line-height: 1.8;
+  /* 多行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 可省略，為瀏覽器預設值 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+.container_news .pagemark {
+  cursor: pointer;
+  width: 80%;
+  height: 10vh;
+  margin: 0 auto;
+}
+.container_news .pagemark .arrow-box {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 992px) {
+  .container_news .pagemark .arrow-box {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .container_news .pagemark .arrow-box {
+    width: 100%;
+  }
+}
+.container_news .pagemark .pagenum {
+  width: 80%;
+  display: block;
+  justify-content: center;
+}
+.container_news .pagemark .pagenum p {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+@media (max-width: 992px) {
+  .container_news .pagemark .pagenum p {
+    display: block;
+    padding: 0 5%;
+  }
+}
+.container_news .pagemark img {
+  width: 100%;
+  object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
