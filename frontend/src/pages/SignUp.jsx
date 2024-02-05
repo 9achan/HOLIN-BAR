@@ -117,7 +117,6 @@ const SignUp = () => {
                 autoComplete="on"
                 required
               />
-              <a href="#" className="link"></a>
               <button type="button" className="btn signin">
                 登入
               </button>
