@@ -1,20 +1,108 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Dropdown } from "react-bootstrap";
+import axios from "axios";
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    const userId = localStorage.getItem("user_id");
+    const token = localStorage.getItem("authToken");
+
+    if (userId && token) {
+      loadMemberInfo(userId, token);
+    }
+  }, []);
+
+  const loadMemberInfo = async (userId, token) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5501/users/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const memberName = response.data.name;
+      setUsername(memberName);
+      setIsLoggedIn(true);
+    } catch (error) {
+      console.error(
+        "Failed to load member information:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
+
+  useEffect((userId) => {
+    // 發送GET請求獲取用戶數據
+    axios
+      .get(`http://localhost:5501/users/${userId}`)
+      .then((response) => {
+        // 設定用戶名稱
+        setUsername(response.data.name);
+        // 設定用戶已登入
+        setIsLoggedIn(true);
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+        // 設定用戶未登入
+        setIsLoggedIn(false);
+      });
+  }, []); // 空數組表示只在元件載入時執行一次
+
+  const handleLogout = () => {
+    // 清除 localStorage 中的数据
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("authToken");
+    // 重置状态
+    setUsername("");
+    setIsLoggedIn(false);
+  };
+
+  // const [memberName, setMemberName] = useState("");
+
+  // useEffect(() => {
+  //   const loadMemberInfo = async () => {
+  //     const userId = localStorage.getItem("user_id");
+  //     const token = localStorage.getItem("authToken");
+
+  //     // 检查是否缺少 user_id 和 token
+  //     if (!userId && !token) {
+  //       return;
+  //     }
+
+  //     try {
+  //       const response = await axios.get(
+  //         `http://localhost:5501/users/${userId}`,
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${token}`,
+  //           },
+  //         }
+  //       );
+
+  //       const memberName = response.data.name;
+
+  //       // 設定會員名稱
+  //       setMemberName(memberName);
+  //     } catch (error) {
+  //       console.error(
+  //         "載入會員資料失敗:",
+  //         error.response ? error.response.data : error.message
+  //       );
+  //     }
+  //   };
+
+  //   loadMemberInfo();
+  // }, []);
+
   return (
     <>
-      <nav
-        className="navbar navbar-expand bg-body-tertiary"
-        style={{
-          position: "fixed",
-          top: "0",
-          left: "0",
-          width: "100%",
-          "z-index": "999",
-          padding: "0",
-        }}
-      >
+      <nav className="navbar navbar-expand bg-body-tertiary">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand">
             <img src="images/logo_b.svg" alt="holin logo" />
@@ -31,14 +119,34 @@ const Navbar = () => {
                   菜單
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/signup" className="nav-link">
-                  <img
-                    src="./images/component/topbar-dark/user_d.svg"
-                    alt="user icon"
-                  />
-                  會員
-                </Link>
+              <li className="nav-item dropdown">
+                {/* 使用條件渲染決定要顯示 Dropdown 還是 Link */}
+                {isLoggedIn ? (
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="nav_member nav-link dropdown-toggle"
+                      id="dropdown-basic"
+                    >
+                      {/* <img
+                      src="./images/component/topbar-dark/user_d.svg"
+                      alt="user icon"
+                      /> */}
+                      {username}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#">會員資料</Dropdown.Item>
+                      <Dropdown.Item href="#">優惠券</Dropdown.Item>
+                      <Dropdown.Divider />
+                      <Dropdown.Item href="#" onClick={handleLogout}>
+                        登出
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                ) : (
+                  <Link to="/signup" className="nav_member nav-link">
+                    會員
+                  </Link>
+                )}
               </li>
             </ul>
             <button

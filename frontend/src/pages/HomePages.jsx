@@ -1,11 +1,29 @@
-import React from "react";
-import Footer from "../components/Footer";
+import React, { useEffect, useState } from "react";
+import { Carousel } from "react-bootstrap";
 
 const HomePages = () => {
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  useEffect(() => {
+    const checkImagesLoaded = () => {
+      const images = document.querySelectorAll(".homepage-banner img");
+      const loadedImages = Array.from(images).filter((img) => img.complete);
+      setImagesLoaded(loadedImages.length === images.length);
+    };
+
+    checkImagesLoaded();
+  }, []);
+
   return (
     <>
-      <section className="banner" style={{"margin-top": "80px"}}>
-        <div
+      {imagesLoaded && (
+        <section className="homepage-banner" style={{ marginTop: "80px" }}>
+          {/* <img
+          src="./images/index/banner-1.png"
+          alt=""
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        /> */}
+          {/* <div
           id="carouselExampleSlidesOnly"
           className="carousel slide"
           data-bs-ride="carousel"
@@ -34,8 +52,32 @@ const HomePages = () => {
               />
             </figure>
           </div>
-        </div>
-      </section>
+        </div> */}
+          <Carousel interval={3500}>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="./images/index/banner-1.png"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="./images/index/banner-2.png"
+                alt="Second slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="./images/index/banner-3.png"
+                alt="Third slide"
+              />
+            </Carousel.Item>
+          </Carousel>
+        </section>
+      )}
       <section className="container-fluid">
         <div className="intro1 mb-5">
           <h2 className="heading">
