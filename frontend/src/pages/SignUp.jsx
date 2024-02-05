@@ -1,36 +1,66 @@
 import React, { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+import axios from 'axios';
 
 const SignUp = () => {
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    password: ''
+  });
+  const [loggedIn, setLoggedIn] = useState(false); // 新增 loggedIn 狀態
 
   useEffect(() => {
     const containerElement = document.querySelector(".container");
     if (containerElement) {
-      if (isSignUp) {
+      if (formData.isSignUp) {
         containerElement.classList.add("right-panel-active");
       } else {
         containerElement.classList.remove("right-panel-active");
       }
     }
-  }, [isSignUp]);
+  }, [formData.isSignUp]);
 
   const handleSignInClick = () => {
-    setIsSignUp(false);
+    setFormData({ ...formData, isSignUp: false });
+    handleFormSubmit(); // 調用 handleFormSubmit 函式
   };
 
   const handleSignUpClick = () => {
-    setIsSignUp(true);
+    setFormData({ ...formData, isSignUp: true });
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
   };
+
+  const handleFormSubmit = async () => { // 移除參數 e
+    try {
+      const response = await axios.post('http://localhost:5501/users/login', formData);
+      const { token, _id } = response.data;
+      // 儲存 token 和 _id 到 localStorage
+      localStorage.setItem('authToken', token);
+      localStorage.setItem('user_id', _id);
+      // 處理成功登入的情況（例如，重新導向用戶）
+      console.log('登入成功：', response.data);
+      setLoggedIn(true);
+    } catch (error) {
+      // 處理登入失敗的情況（例如，顯示錯誤訊息給用戶）
+      console.error('登入失敗：', error);
+    }
+  };
+  if (loggedIn) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <>
-      <div className={`signupbox ${isSignUp ? 'right-panel-active' : ''}`}>
+      <div className={`signupBox ${formData.isSignUp ? 'right-panel-active' : ''}`}>
         <div className="container">
-          {/* Sign Up */}
+          {/*註冊表單 */}
           <div className="container__form container--signup">
             <form action="#" className="form" id="form1" onSubmit={handleFormSubmit}>
               <h2 className="form__title">註冊會員</h2>
@@ -94,30 +124,34 @@ const SignUp = () => {
               <button className="btn signup">註冊</button>
             </form>
           </div>
-          {/* Login In */}
+          {/* 登入 */}
           <div className="container__form container--signin">
             <form action="#" className="form" id="loginForm" onSubmit={handleFormSubmit}>
               <h2 className="form__title">登入</h2>
               <label htmlFor="login_username">信箱</label>
               <input
-                type="email"
-                id="login_username"
-                name="login_username"
-                title="請輸入Email"
-                placeholder="example@yourusername.com"
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                title="請輸入帳號"
+                placeholder="請輸入帳號"
                 required
               />
               <label htmlFor="password">密碼</label>
               <input
-                type="password"
-                name="password"
-                id="password"
-                title="請輸入密碼"
-                placeholder="請輸入8位數包含英文和數字"
-                autoComplete="on"
-                required
+               type="password"
+               id="password"
+               name="password"
+               value={formData.password}
+               onChange={handleInputChange}
+               title="請輸入密碼"
+               placeholder="請輸入密碼"
+               autoComplete="on"
+               required
               />
-              <button type="button" className="btn signin">
+              <button type="button" className="btn signin" onClick={handleSignInClick}>
                 登入
               </button>
               <button type="button" className="btn google ">
