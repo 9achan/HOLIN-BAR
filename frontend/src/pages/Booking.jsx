@@ -109,6 +109,15 @@ const Booking = () => {
     }
   };
 
+  const [pickTime, setPickTime] = useState("");
+  const saveData = () => {
+    sessionStorage.setItem("person", guestNo);
+    sessionStorage.setItem("date", pickDate);
+    sessionStorage.setItem("time", pickTime);
+    // 使用 React Router 跳轉到下一頁
+    window.location.href = "/booking/jumppage";
+  };
+
   return (
     <>
       <section className="search-box">
@@ -120,7 +129,13 @@ const Booking = () => {
                 <button className="counter-btn" onClick={cntDown} type="button">
                   -
                 </button>
-                <input type="text" name="guests" value={guestNo} readonly />
+                <input
+                  type="text"
+                  name="guests"
+                  value={guestNo}
+                  onChange={(e) => setGuestNo(e.target.value)}
+                  readonly
+                />
                 <button className="counter-btn" onClick={cntUp} type="button">
                   +
                 </button>
@@ -129,19 +144,28 @@ const Booking = () => {
             <div className="reserve-dates">
               <label>預約日期</label>
               <div className="pickdate-box">
-                <p id="pickDate">{pickDate}</p>
+                <p id="pickDate" onChange={(e) => setPickDate(e.target.value)}>
+                  {pickDate}
+                </p>
               </div>
             </div>
             <div className="reserve-times">
               <label>預約時間</label>
-              <select name="booking-times" id="pickTime">
+              <select
+                name="booking-times"
+                id="pickTime"
+                onChange={(e) => setPickTime(e.target.value)}
+              >
+                <option value="">請選擇</option>
                 <option value="19:00">19:00</option>
                 <option value="22:00">22:00</option>
                 <option value="01:00">01:00</option>
               </select>
             </div>
           </div>
-          <button className="btn">搜尋</button>
+          <button className="booking-btn" onClick={saveData}>
+            搜尋
+          </button>
         </div>
       </section>
 

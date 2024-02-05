@@ -8,6 +8,7 @@ import HomePages from "./pages/HomePages";
 import Booking from "./pages/Booking";
 import Menu from "./pages/Menu";
 import SignUp from "./pages/SignUp";
+import BookingJumpPage from "./pages/BookingJumpPage";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/menu" element={<Menu />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/booking/jumppage" element={<BookingJumpPage />} />
+
       </Routes>
     </BrowserRouter>
   );

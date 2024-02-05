@@ -1,0 +1,30 @@
+@use "../variable/" as *;
+@use "../function/" as *;
+
+.hamburger {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 0;
+
+  .container-fluid {
+    .nav-link {
+      color: $major-color-2;
+      font-weight: normal;
+      font-family: $ff-tc-sans;
+    }
+      .nav_member {
+        background-color: transparent;
+        border: none;
+        font-size: $fs-m;
+        padding: 8px;
+      }
+  }
+}
