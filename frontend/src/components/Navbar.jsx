@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
 
+
   useEffect(() => {
     const userId = localStorage.getItem("user_id");
     const token = localStorage.getItem("authToken");
@@ -50,6 +51,25 @@ const Navbar = () => {
   // const closeMenu = () => {
   //   setIsOpen(false);
   // };
+  
+  const PopupComponent = () => {
+    const [popupVisible, setPopupVisible] = useState(false);
+  
+    const showPopup = () => {
+      setPopupVisible(true);
+    };
+  
+    const hidePopup = () => {
+      setPopupVisible(false);
+    };
+  
+    const handleOutsideClick = (event) => {
+      if (event.target === event.currentTarget) {
+        hidePopup();
+      }
+    };
+  }
+
 
   return (
     <>
@@ -100,7 +120,7 @@ const Navbar = () => {
                 )}
               </li>
             </ul>
-            {/* <button
+            <button
               className="hamburger"
               id="popupButton"
               type="button"
@@ -109,9 +129,9 @@ const Navbar = () => {
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
-            >
+              onClick={showPopup}>
               <span className="navbar-toggler-icon"></span>
-            </button> */}
+            </button>
           </div>
         </div>
       </nav>
@@ -201,11 +221,14 @@ const Navbar = () => {
           </div>
         </label>
       </div> */}
-      {/* <div id="popupContainer" className="popup-container">
+      {/* 漢堡v1 */}
+      
+      <div id="popupContainer" className="popup-container"  style={{ display: 'block' }}
+          onClick={handleOutsideClick}>
         <div className="popup-content">
           <span className="close" id="closeButton"></span>
           <div className="button-row">
-            <button>
+            <button onClick={hidePopup} id="closeButton">
               <Link to="/">首頁</Link>
               <img
                 src="./images/hamburger/pattern1_wave_white.svg"
@@ -214,7 +237,7 @@ const Navbar = () => {
                 height="170px"
               />
             </button>
-            <button>
+            <button onClick={hidePopup} id="closeButton">
               <Link to="/news">最新消息</Link>
               <img
                 src="./images/hamburger/pattern1_wave_white.svg"
@@ -223,7 +246,7 @@ const Navbar = () => {
                 height="170px"
               />
             </button>
-            <button>
+            <button onClick={hidePopup} id="closeButton">
               <Link to="/aboutus">關於我們</Link>
               <img
                 src="./images/hamburger/pattern1_wave_white.svg"
@@ -234,7 +257,7 @@ const Navbar = () => {
             </button>
           </div>
           <div className="button-row">
-            <button>
+            <button onClick={hidePopup} id="closeButton">
               <Link to="/signup">會員登入</Link>
               <img
                 src="./images/hamburger/pattern1_wave_white.svg"
@@ -243,7 +266,7 @@ const Navbar = () => {
                 height="170px"
               />
             </button>
-            <button>
+            <button onClick={hidePopup} id="closeButton">
               <Link to="/menu">菜單</Link>
               <img
                 src="./images/hamburger/pattern1_wave_white.svg"
@@ -252,7 +275,7 @@ const Navbar = () => {
                 height="170px"
               />
             </button>
-            <button>
+            <button onClick={hidePopup} id="closeButton">
               <Link to="/booking">一般訂位</Link>
               <img
                 src="./images/hamburger/pattern1_wave_white.svg"
@@ -263,7 +286,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
