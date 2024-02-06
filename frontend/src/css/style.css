@@ -1172,6 +1172,11 @@ body {
   transform: translateX(100%);
   z-index: 5;
 }
+@media (max-width: 992px) {
+  .bookingJumpPageBody .bookingJumpPageContainer.right-panel-active .container--bookingInfo {
+    transform: translateX(0);
+  }
+}
 .bookingJumpPageBody .bookingJumpPageContainer .container--bookingChk {
   left: 0;
   width: 50%;
@@ -1340,6 +1345,7 @@ body {
 .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .bookingChkBox h3 {
   text-align: center;
   color: #353938;
+  justify-content: center;
 }
 .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .bookingChkBox .holininf {
   color: #353938;
@@ -1386,6 +1392,11 @@ body {
   height: 100%;
   object-fit: cover;
 }
+@media (max-width: 576px) {
+  .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .bookingChkBox {
+    padding: 0 24px;
+  }
+}
 @media (max-width: 992px) {
   .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form {
     width: 100%;
@@ -1405,9 +1416,37 @@ body {
 .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .timecheck p {
   font-size: 0.8rem;
 }
+.bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .rwdContainer {
+  display: none;
+}
+@media (max-width: 992px) {
+  .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .rwdContainer {
+    display: block;
+    margin-bottom: 10%;
+  }
+  .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .rwdContainer .bookingJumpPageBtn {
+    background-color: #bc9f77;
+    border-radius: 20px;
+    border: 0.5px solid #bc9f77;
+    color: #ededed;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 0.9rem 4rem;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  }
+  .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .rwdContainer .bookingJumpPageBtn:active {
+    transform: scale(0.95);
+  }
+  .bookingJumpPageBody .bookingJumpPageContainer .bookingJumpPageContainer__form .rwdContainer .bookingJumpPageBtn:focus {
+    outline: none;
+  }
+}
 @media (max-width: 992px) {
   .bookingJumpPageBody .bookingJumpPageContainer {
-    flex-direction: column;
+    height: 80vh;
   }
 }
 @keyframes show {

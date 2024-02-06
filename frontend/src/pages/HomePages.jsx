@@ -19,40 +19,40 @@ const HomePages = () => {
       {imagesLoaded && (
         <section className="homepage-banner" style={{ marginTop: "80px" }}>
           {/* <img
-          src="./images/index/banner-1.png"
-          alt=""
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        /> */}
+            src="./images/index/banner-1.png"
+            alt=""
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          /> */}
           {/* <div
-          id="carouselExampleSlidesOnly"
-          className="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-interval="3500"
-        >
-          <div className="carousel-inner">
-            <figure className="carousel-item active">
-              <img
-                src="./images/index/banner-1.png"
-                className="d-block w-100"
-                alt="..."
-              />
-            </figure>
-            <figure className="carousel-item">
-              <img
-                src="./images/index/banner-2.png"
-                className="d-block w-100"
-                alt="..."
-              />
-            </figure>
-            <figure className="carousel-item">
-              <img
-                src="./images/index/banner-3.png"
-                className="d-block w-100"
-                alt="..."
-              />
-            </figure>
-          </div>
-        </div> */}
+            id="carouselExampleSlidesOnly"
+            className="carousel slide"
+            data-bs-ride="carousel"
+            data-bs-interval="3500"
+          >
+            <div className="carousel-inner">
+              <figure className="carousel-item active">
+                <img
+                  src="./images/index/banner-1.png"
+                  className="d-block w-100"
+                  alt="..."
+                />
+              </figure>
+              <figure className="carousel-item">
+                <img
+                  src="./images/index/banner-2.png"
+                  className="d-block w-100"
+                  alt="..."
+                />
+              </figure>
+              <figure className="carousel-item">
+                <img
+                  src="./images/index/banner-3.png"
+                  className="d-block w-100"
+                  alt="..."
+                />
+              </figure>
+            </div>
+          </div> */}
           <Carousel interval={3500}>
             <Carousel.Item>
               <img
