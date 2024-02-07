@@ -163,6 +163,17 @@ const SignUp = () => {
                   required
                 />
                 <button className="btn signup">註冊</button>
+                <div className="rwdContainer">
+                  <h3>已經是會員？立即</h3>
+                  <button
+                    type="button"
+                    className="rwdBtn"
+                    id="signIn"
+                    onClick={handleSignInClick}
+                  >
+                    登入
+                  </button>
+                </div>
               </form>
             </div>
           ) : (
@@ -199,6 +210,18 @@ const SignUp = () => {
                 <button type="button" className="btn google ">
                   Sign in with Google
                 </button>
+                <div className="rwdContainer rwdSignin">
+                  <h3>還不是會員？馬上</h3>
+                  <button
+                    type="button"
+                    className="rwdBtn"
+                    id="signUp"
+                    onClick={handleSignUpClick}
+                  >
+                    註冊
+                  </button>
+                  <h3>領取會員禮</h3>
+                </div>
               </form>
             </div>
           )}

@@ -325,6 +325,16 @@ const BookingJumpPage = () => {
                   }}
                 />
               </div>
+              <div className="rwdContainer">
+                <button
+                  type="button"
+                  className="bookingJumpPageBtn"
+                  id="bookingInfo"
+                  onClick={handleBookingClick}
+                >
+                  訂位
+                </button>
+              </div>
             </form>
           </div>
 
@@ -366,6 +376,11 @@ const BookingJumpPage = () => {
                   <figure>
                     <img src="../images/members/arrow_right.svg" alt="" />
                   </figure>
+                </Link>
+              </div>
+              <div className="rwdContainer">
+                <Link to="/" className="bookingJumpPageBtn">
+                  河林
                 </Link>
               </div>
             </form>

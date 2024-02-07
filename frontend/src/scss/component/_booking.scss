@@ -177,6 +177,7 @@
           padding: 0 5%;
           border: none;
           cursor: pointer;
+          outline: none;
 
           @include pad {
             font-size: $fs-m;
