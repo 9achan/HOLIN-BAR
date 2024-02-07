@@ -345,10 +345,14 @@ input {
     }
 }
 
-@media (max-device-width: 576px) {
-    .container {
+.rwdContainer {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    /* .container {
         flex-direction: column;
-    }
+    } */
 
     .container__form {
         width: 100%;
@@ -361,4 +365,27 @@ input {
         display: none;
     }
 
+    .rwdContainer {
+        display: flex;
+        margin: 5% auto;
+        letter-spacing: 1.5px;
+    }
+
+    .rwdSignin {
+        margin: 15% auto;
+        letter-spacing: 1.5px;
+    }
+
+    .container.right-panel-active .container--signup {
+        transform: translateX(0);
+    }
+
+    .rwdBtn {
+        border: none;
+        color: var(--major-color-3);
+    }
+    
+    .form__title {
+        margin: 5% auto;
+    }
 }

@@ -3,7 +3,7 @@ import "../css/carousel.css";
 
 const Menu = () => {
   const [current, setCurrent] = useState(0);
-  const total = 3; // 假设总共有3个轮播项
+  const total = 3; // 假設總共有3個輪播項目
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -12,7 +12,7 @@ const Menu = () => {
       setCurrent(next);
     }, 3500);
 
-    return () => clearInterval(intervalId); // 组件卸载时清除定时器
+    return () => clearInterval(intervalId); // 組件卸載時清除定時器
   }, [current]);
 
   const moveRight = () => {
@@ -34,7 +34,7 @@ const Menu = () => {
   };
 
   useEffect(() => {
-    setSlide(0, 0); // 设置初始轮播项
+    setSlide(0, 0); // 設定初始輪播項目
   }, []);
 
   // 點選時變換菜單內容效果

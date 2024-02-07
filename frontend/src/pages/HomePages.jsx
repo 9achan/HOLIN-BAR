@@ -1,83 +1,66 @@
-import React, { useEffect, useState } from "react";
-import { Carousel } from "react-bootstrap";
+import React from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Parallax, Pagination, Navigation } from "swiper/modules";
+
+import "../css/swCarousel.css";
 
 const HomePages = () => {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  useEffect(() => {
-    const checkImagesLoaded = () => {
-      const images = document.querySelectorAll(".homepage-banner img");
-      const loadedImages = Array.from(images).filter((img) => img.complete);
-      setImagesLoaded(loadedImages.length === images.length);
-    };
-
-    checkImagesLoaded();
-  }, []);
-
   return (
     <>
-      {imagesLoaded && (
-        <section className="homepage-banner" style={{ marginTop: "80px" }}>
-          {/* <img
-            src="./images/index/banner-1.png"
-            alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          /> */}
-          {/* <div
-            id="carouselExampleSlidesOnly"
-            className="carousel slide"
-            data-bs-ride="carousel"
-            data-bs-interval="3500"
-          >
-            <div className="carousel-inner">
-              <figure className="carousel-item active">
-                <img
-                  src="./images/index/banner-1.png"
-                  className="d-block w-100"
-                  alt="..."
-                />
-              </figure>
-              <figure className="carousel-item">
-                <img
-                  src="./images/index/banner-2.png"
-                  className="d-block w-100"
-                  alt="..."
-                />
-              </figure>
-              <figure className="carousel-item">
-                <img
-                  src="./images/index/banner-3.png"
-                  className="d-block w-100"
-                  alt="..."
-                />
-              </figure>
-            </div>
-          </div> */}
-          <Carousel interval={3500}>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./images/index/banner-1.png"
-                alt="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./images/index/banner-2.png"
-                alt="Second slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./images/index/banner-3.png"
-                alt="Third slide"
-              />
-            </Carousel.Item>
-          </Carousel>
-        </section>
-      )}
+      <Swiper
+        style={{
+          "--swiper-navigation-color": "#ededed",
+          "--swiper-pagination-color": "#ededed",
+          marginTop: "80px",
+          height: "85vh",
+        }}
+        speed={600}
+        parallax={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, Parallax, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <div
+          slot="container-start"
+          className="parallax-bg"
+          style={{
+            backgroundImage: "url('../../images/index/banner-1.png')",
+          }}
+          data-swiper-parallax="-23%"
+        ></div>
+        <SwiperSlide>
+          <div className="title" data-swiper-parallax="-300">
+            Slide 1
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="title" data-swiper-parallax="-300">
+            Slide 2
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="title" data-swiper-parallax="-300">
+            Slide 3
+          </div>
+        </SwiperSlide>
+        <div className="swiper-pagination"></div>
+        <div className="swiper-button-prev swiper-button-white"></div>
+        <div className="swiper-button-next swiper-button-white"></div>
+      </Swiper>
       <section className="container-fluid">
         <div className="intro1 mb-5">
           <h2 className="heading">
