@@ -11,15 +11,19 @@ import SignUp from "./pages/SignUp";
 import News from "./pages/News";
 import BookingJumpPage from "./pages/BookingJumpPage";
 
+import AboutUs from "./pages/AboutUs";
+
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePages />} />
-          <Route path="/booking" element={<Booking />} />
+          <Route path="/booking" element={<Booking />} />          
           <Route path="/menu" element={<Menu />} />
           <Route path="/news" element={<News />} />
+          <Route path="/aboutus" element={<AboutUs />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/booking/jumppage" element={<BookingJumpPage />} />
