@@ -38,23 +38,23 @@ const HomePages = () => {
           slot="container-start"
           className="parallax-bg"
           style={{
-            backgroundImage: "url('../../images/index/banner-1.png')",
+            backgroundImage: "url('../../images/index/banner-1.2.png')",
           }}
           data-swiper-parallax="-23%"
         ></div>
         <SwiperSlide>
           <div className="title" data-swiper-parallax="-300">
-            Slide 1
+            河林
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="title" data-swiper-parallax="-300">
-            Slide 2
+            喝拎
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="title" data-swiper-parallax="-300">
-            Slide 3
+            HOLIN
           </div>
         </SwiperSlide>
         <div className="swiper-pagination"></div>
