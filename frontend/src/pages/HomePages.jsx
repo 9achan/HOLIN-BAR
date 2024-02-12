@@ -110,20 +110,20 @@ const HomePages = () => {
         </div>
         <div className="intro2">
           <div className="intro2_img">
-            <div className="intro2_img_item">
+            <figure className="intro2_img_item">
               <img
                 src="./images/index/aboutus2-1.png"
                 className="img-fluid"
                 alt=""
               />
-            </div>
-            <div className="intro2_img_item">
+            </figure>
+            <figure className="intro2_img_item">
               <img
                 src="./images/index/aboutus2-2.png"
                 className="img-fluid"
                 alt=""
               />
-            </div>
+            </figure>
             <div className="intro2_img_item">
               <img
                 src="./images/index/aboutus2-3.png"
