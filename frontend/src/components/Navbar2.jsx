@@ -8,6 +8,7 @@ import "../css/navbar2.css";
 const Navbar2 = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
+  // const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const userId = localStorage.getItem("user_id");
@@ -48,7 +49,6 @@ const Navbar2 = () => {
     setIsLoggedIn(false);
   };
 
-
   const [isHovered, setIsHovered] = useState(false);
 
   const addHoverClass = () => {
@@ -75,6 +75,10 @@ const Navbar2 = () => {
     }
   };
 
+  // const closeMenu = () => {
+  //   setIsOpen(false);
+  // };
+
   return (
     <>
       <header className="cd-header">
@@ -87,13 +91,13 @@ const Navbar2 = () => {
           <nav>
             <ul className="menu">
               <li>
-                <Link to="/booking" className="hover-target">
+                <Link to="/booking" className="hover-target nav-link">
                   訂位
                 </Link>
               </li>
 
               <li>
-                <Link to="/menu" className="hover-target">
+                <Link to="/menu" className="hover-target nav-link">
                   菜單
                 </Link>
               </li>
@@ -102,11 +106,11 @@ const Navbar2 = () => {
                 {isLoggedIn ? (
                   <Dropdown>
                     <Dropdown.Toggle
-                      className="hover-target"
+                      className="hover-target nav_member nav-link" 
                       id="dropdown-basic"
                     >
                       {username}
-                    </Dropdown.Toggle>
+                    </Dropdown.Toggle >
                     <Dropdown.Menu>
                       <Dropdown.Item href="#">會員資料</Dropdown.Item>
                       <Dropdown.Item href="#">優惠券</Dropdown.Item>
@@ -117,7 +121,7 @@ const Navbar2 = () => {
                     </Dropdown.Menu>
                   </Dropdown>
                 ) : (
-                  <Link to="/signup" className="hover-target">
+                  <Link to="/signup" className="hover-target nav_member nav-link">
                     會員
                   </Link>
                 )}
@@ -133,68 +137,82 @@ const Navbar2 = () => {
           </div>
         </div>
       </header>
-      <div className="nav">
-        <div className="nav__content">
-          <div className="button-row">
-            <button>
-              <Link to="/">首頁</Link>
-              <img
-                src="./images/hamburger/pattern1_wave_white.svg"
-                alt=""
-                width="180px"
-                height="170px"
-              />
-            </button>
-            <button>
-              <Link to="/news">最新消息</Link>
-              <img
-                src="./images/hamburger/pattern1_wave_white.svg"
-                alt=""
-                width="180px"
-                height="170px"
-              />
-            </button>
-            <button>
-              <Link to="/aboutus">關於我們</Link>
-              <img
-                src="./images/hamburger/pattern1_wave_white.svg"
-                alt=""
-                width="180px"
-                height="170px"
-              />
-            </button>
-          </div>
-          <div className="button-row">
-            <button>
-              <Link to="/signup">會員登入</Link>
-              <img
-                src="./images/hamburger/pattern1_wave_white.svg"
-                alt=""
-                width="180px"
-                height="170px"
-              />
-            </button>
-            <button>
-              <Link to="/menu">菜單</Link>
-              <img
-                src="./images/hamburger/pattern1_wave_white.svg"
-                alt=""
-                width="180px"
-                height="170px"
-              />
-            </button>
-            <button>
-              <Link to="/booking">一般訂位</Link>
-              <img
-                src="./images/hamburger/pattern1_wave_white.svg"
-                alt=""
-                width="180px"
-                height="170px"
-              />
-            </button>
+        <div className="nav">
+          <div className="nav__content">
+            <div className="button-row">
+              <button>
+                <Link to="/" onClick={toggleMenu}>
+                  <div>
+                    <img
+                      src="./images/hamburger/pattern1_wave_white.svg"
+                      alt=""
+                      width="180px"
+                      height="170px"
+                    />
+                    <span className="button-text">首頁</span>
+                  </div>
+                </Link>
+              </button>
+              <button>
+                <Link to="/news" onClick={toggleMenu}>
+                  <img
+                    src="./images/hamburger/pattern1_wave_white.svg"
+                    alt=""
+                    width="180px"
+                    height="170px"
+                  />
+                  <span className="button-text">最新消息</span>
+                </Link>
+              </button>
+              <button>
+                <Link to="/aboutus" onClick={toggleMenu}>
+                  <img
+                    src="./images/hamburger/pattern1_wave_white.svg"
+                    alt=""
+                    width="180px"
+                    height="170px"
+                  />
+                  <span className="button-text">關於我們</span>
+                </Link>
+              </button>
+            </div>
+            <div className="button-row">
+              <button>
+                <Link to="/signup" onClick={toggleMenu}>
+                  <img
+                    src="./images/hamburger/pattern1_wave_white.svg"
+                    alt=""
+                    width="180px"
+                    height="170px"
+                  />
+                  <span className="button-text">會員登入</span>
+                </Link>
+              </button>
+              <button>
+                <Link to="/menu" onClick={toggleMenu}>
+                  <img
+                    src="./images/hamburger/pattern1_wave_white.svg"
+                    alt=""
+                    width="180px"
+                    height="170px"
+                  />
+                  <span className="button-text">菜單</span>
+                </Link>
+              </button>
+              <button>
+                <Link to="/booking" onClick={toggleMenu}>
+                  <img
+                    src="./images/hamburger/pattern1_wave_white.svg"
+                    alt=""
+                    width="180px"
+                    height="170px"
+                  />
+                  <span className="button-text">一般訂位</span>
+                </Link>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
     </>
   );
 };
