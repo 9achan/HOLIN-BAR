@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC&display=swap");
 
+
 :root {
   --major-color-1: #ededed;
   --major-color-2: #353938;
@@ -12,6 +13,10 @@
 ol,
 ul {
   list-style: none;
+}
+
+.btn-primary {
+  background-color: transparent !important; 
 }
 
 header {
@@ -32,7 +37,9 @@ a {
 a:hover {
   text-decoration: none;
 }
-
+.dropdown-basic{
+  color:pink;
+}
 /* #Cursor
 ================================================== */
 
@@ -109,6 +116,11 @@ nav {
   justify-content: flex-end;
   margin-top: 36px;
 }
+@media (max-width: 576px) {
+  nav img {
+    display: none;
+  }
+}
 
 nav .menu {
   width: 20%;
@@ -138,6 +150,7 @@ nav .nav_member:hover,
 nav .nav_member:active {
   background-color: transparent;
   border: none;
+  background:none;
 }
 /* 漢堡展開頁
 ================================================== */
@@ -152,22 +165,38 @@ nav .nav_member:active {
   padding: 0;
   margin: 0;
 } */
+@media (max-width: 576px){
+  .nav__content img{
+    display: none;
+  }
+}
+@media (max-width: 992px){
+  .nav__content{
+    display: flex;
+  }
+}
+@media (max-width: 576px){
+  .nav__content{
+    display: flex;
+    flex-direction: column;
+  }
+}
 .button-row {
   display: flex;
   justify-content: space-evenly;
   margin: 5% 0;
   position: relative;
   overflow: hidden;
-  /* @include pad{
-    flex-wrap:wrap;
+}
+
+@media (max-width: 992px) {
+  .button-row{
+    flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0;
-  } */
-  /* @include mobile {
-    flex-direction: column;
-    margin: 0;
-} */
+  }
 }
+
 .button-row button {
   width: 100%;
   /* height: 20vh; */
@@ -176,12 +205,20 @@ nav .nav_member:active {
   background-color: transparent;
   position: relative;
   margin: 0 5rem;
-  /* @include mobile{
+}
+@media (max-width: 992px){
+  .button-row button{
+    margin: 0 10px;
+    padding: 45px 100px;
+  }
+}
+@media (max-width: 576px) {
+  .button-row button {
     width: 100%;
-    margin: 3.5rem 0;
+    margin: 1.5rem 0;
     text-align: center;
     height: 100%;
-} */
+  }
 }
 .button-text {
   position: absolute;
@@ -264,7 +301,7 @@ nav .nav_member:active {
 }
 .nav-but-wrap {
   position: relative;
-  display: inline-block;
+  display: block;
   float: right;
   padding-left: 15px;
   padding-top: 15px;
@@ -314,7 +351,14 @@ nav .nav_member:active {
 .nav {
   position: fixed;
   z-index: 98;
+  font-family: "Noto Serif TC", serif;
 }
+@media (max-width: 992px){
+  .nav{
+    background-size: contain;
+  }
+}
+
 .nav:before,
 .nav:after {
   content: "";
@@ -343,10 +387,11 @@ nav .nav_member:active {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
   /* background-image: url(../../public/images/hamburger/envi6-w50-01.jpeg); */
-  background-image: url(../../public/images/hamburger/bluelemon-4-01.png);
+  background-image: url(../../public/images/hamburger/bluelemon-5-01.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .nav:before {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
