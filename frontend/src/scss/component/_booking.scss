@@ -2,7 +2,7 @@
 @use "../function/" as *;
 
 .search-box {
-  margin-top: 80px;
+  margin-top: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,7 +259,7 @@
   align-items: center;
   padding: 1% 0;
   width: 100%;
-  height: calc(100vh - 80px - 24vh);
+  height: calc(100vh - 90px - 24vh);
   background-color: $major-color-1;
 
   .calender-wrapper-deco {
