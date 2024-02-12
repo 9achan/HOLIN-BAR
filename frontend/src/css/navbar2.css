@@ -15,10 +15,11 @@ ul {
 }
 
 header {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Noto Serif TC", serif;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.7;
+  letter-spacing: .15rem;
   color: var(--major-color-2);
   background-color: transparent;
   /* overflow-x: hidden; */
@@ -111,13 +112,25 @@ nav {
 }
 
 nav .menu {
-  width: 20%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-bottom: 0;
   font-size: 18px;
   margin-right: 3%;
+}
+
+@media (max-width: 992px) {
+  nav .menu {
+    width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  nav .menu {
+    display: none;
+  }
 }
 
 nav .menu a {
@@ -131,8 +144,8 @@ nav .nav-link {
 nav .nav_member {
   background-color: transparent;
   border: none;
-  font-size: 16px;
-  padding: 8px;
+  font-size: 18px;
+  padding: 6px;
 }
 nav .nav_member:hover,
 nav .nav_member:active {
@@ -268,7 +281,7 @@ nav .nav_member:active {
   float: right;
   padding-left: 15px;
   padding-top: 15px;
-  margin-top: 26px;
+  margin-top: 32px;
   transition: all 0.3s ease-out;
 }
 .menu-icon {

@@ -110,7 +110,7 @@ const Navbar2 = () => {
                       id="dropdown-basic"
                     >
                       {username}
-                    </Dropdown.Toggle >
+                    </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item href="#">會員資料</Dropdown.Item>
                       <Dropdown.Item href="#">優惠券</Dropdown.Item>

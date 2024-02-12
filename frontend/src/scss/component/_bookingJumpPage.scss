@@ -255,10 +255,12 @@
         }
 
         .bonus {
+          margin-bottom: 8%;
           h3 {
             color: $major-color-2;
             background-color: transparent;
             display: flex;
+            font-size: $fs-s;
             letter-spacing: $ls-m;
           }
           a {
@@ -312,12 +314,12 @@
         color: $major-color-2;
         border: $major-color-2 1px solid;
         border-radius: 20px;
-        width: 50%;
+        width: 70%;
         height: 15%;
         line-height: $lh-s;
 
         p {
-          font-size: $fs-s;
+          font-size: $fs-m;
         }
       }
 
