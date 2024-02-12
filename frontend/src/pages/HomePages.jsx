@@ -15,7 +15,7 @@ const HomePages = () => {
         style={{
           "--swiper-navigation-color": "#ededed",
           "--swiper-pagination-color": "#ededed",
-          marginTop: "80px",
+          marginTop: "90px",
           height: "85vh",
         }}
         speed={600}
@@ -62,7 +62,7 @@ const HomePages = () => {
         <div className="swiper-button-next swiper-button-white"></div>
       </Swiper>
       <section className="container-fluid">
-        <div className="intro1 mb-5">
+        <div className="intro1">
           <h2 className="heading">
             河<br />の<br />林
           </h2>
@@ -117,14 +117,14 @@ const HomePages = () => {
                 alt=""
               />
             </figure>
-            <figure className="intro2_img_item">
+            <figure className="intro2_img_item intro2_img_item-none">
               <img
                 src="./images/index/aboutus2-2.png"
                 className="img-fluid"
                 alt=""
               />
             </figure>
-            <div className="intro2_img_item">
+            <div className="intro2_img_item intro2_img_item-none">
               <img
                 src="./images/index/aboutus2-3.png"
                 className="img-fluid"
