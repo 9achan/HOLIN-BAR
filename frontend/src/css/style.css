@@ -1138,7 +1138,7 @@ body {
 .bookingJumpPageBody {
   align-items: center;
   background-color: #ededed;
-  background: url("../../public/images/members/bg4-50-01.png");
+  background: url("../../public/images/booking/bg-2.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -1200,7 +1200,7 @@ body {
 }
 .bookingJumpPageBody .bookingJumpPageContainer .overlay {
   background-color: rgba(53, 57, 56, 0.7);
-  background: url("../../public/images/members/glass.jpg");
+  background: url("../../public/images/booking/glass.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
