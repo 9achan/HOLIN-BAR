@@ -1,0 +1,406 @@
+@use "../variable/" as *;
+@use "../function/" as *;
+
+// img{
+//     width: 100%;
+//     object-fit: cover;
+// }
+
+.hamburger {
+  border: none;
+  background-color: transparent;
+}
+
+/* 中間 */
+.aboutus {
+    @include web{
+        margin: 0 10rem;
+        // background-color: $major-color-1;
+    }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  // width: 1440px;
+  margin: 0 auto;
+
+  // margin-top: 80px;
+  // @include pad {
+  //     width: 100%;
+  // }
+
+  // @include mobile {
+  //     width: 580px;
+  // }
+
+  /* box1 */
+  // .logo-pic_box {
+  //     width: 100%;
+
+  //     .ho {
+  //         margin-bottom: 7px;
+  //     }
+
+  //     .lin {
+  //         text-align: right;
+  //         margin-top: 7px;
+  //     }
+
+  //     p {
+  //         margin: 15px 0 15px 0;
+  //         line-height: 2.5;
+  //         font-weight: 900;
+  //     }
+  // }
+
+  // box1test
+  .logo-pic_box {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    @include pad {
+      padding: 0 2rem;
+      width: 100%;
+    }
+    @include mobile {
+      background-image: url(../../public/images/aboutus/aboutus_glass_b.png);
+      background-size: cover;
+      // background-position: center bottom; // 背景图片在移动设备上居中底部对齐
+      background-repeat: no-repeat;
+      // background-color: rgba(0, 0, 0, 0.9);
+      // z-index: 1;
+      opacity: 0.9;
+      margin-top: 3rem;
+    }
+    .ho {
+      display: flex;
+      margin-bottom: 2%;
+      margin-top: 4rem;
+      // width: 100%;
+      @include mobile {
+        display: none;
+      }
+      .superho {
+        padding-top: 1rem;
+        padding-left: 0.7rem;
+      }
+    }
+    .lin {
+      position: relative;
+      display: flex;
+      @include pad {
+        margin-top: 1rem;
+      }
+      @include mobile {
+        display: none;
+      }
+      .two {
+        margin-left: 6rem;
+        @include pad {
+          margin-left: 4rem;
+        }
+      }
+      .three {
+        // width: 58vw;
+        padding-left: 2.6rem;
+        @include pad {
+          padding-bottom: 1rem;
+          padding-left: 1.6rem; // 在响应式设计下进一步减少左内边距
+        }
+      }
+      .superlin {
+        position: absolute;
+        right: 0;
+        padding-top: 0.7rem;
+        @include pad {
+          width: 15%;
+          z-index: 1;
+          top: -0.7rem;
+        }
+      }
+    }
+    p {
+      display: block;
+      margin-top: 5rem;
+      font-weight: 500;
+      line-height: 2;
+      @include pad {
+        text-align: center;
+        margin: auto;
+        margin-top: 6rem;
+        line-height: 3;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+    .aboutusrwdbox_p1 {
+      display: none;
+      @include mobile {
+        color: white;
+        //    margin-top: 4rem;
+        display: flex;
+        align-items: center;
+        height: 25rem;
+        margin-top: 0;
+      }
+    }
+  }
+
+  /* box2 */
+  .aboutus_textgroup {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    // margin: 0 auto;
+    h2 {
+      //   display: block;
+      // margin: 50px 250px;
+      font-weight: 900;
+      font-size: 1.5rem;
+      position: absolute;
+      //   right: 0;
+      margin: 4% auto;
+      //   原來是margin: 4% 9%
+      width: 100%;
+      text-align: end;
+      padding-right: 128px;
+      @include pad {
+        position: relative; // 移除绝对定位，以便相对于其父元素定位
+        text-align: center; // 在响应式设计中居中对齐
+        margin: auto; // 水平居中对齐
+        width: 100%; // 确保它在移动设备上占据整个宽度
+        margin-top: 9rem;
+        padding-right: 0;
+      }
+    }
+    .textgroup_box {
+      display: flex;
+      // width: 100%;
+      // max-width: 1200px;
+      margin: 15rem 128px;
+      //   margin: 15rem 1auto;
+      // padding-top:15%;
+      justify-content: space-between;
+      @include pad {
+        margin: 8rem 65px;
+        margin-bottom: 1rem;
+        flex-direction: column;
+      }
+
+      p {
+        display: block;
+        // margin: 50px 100px;
+        font-weight: 500;
+        line-height: 2;
+        align-self: flex-start;
+        @include pad {
+          // margin: 3rem 0;
+          margin-bottom: 2rem;
+          align-self: center;
+        }
+      }
+      /* line1 */
+      .line1 {
+        position: relative;
+        margin-right: 3.5rem;
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        line-height: 120px;
+        text-indent: 5px;
+        color: black;
+        z-index: 9999;
+        align-self: flex-end;
+        @include pad {
+          // margin: 3rem 0;
+          align-self: center;
+          margin-top: 3rem;
+          margin-right: 0;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 50px;
+          box-sizing: border-box;
+          border-bottom: 1px solid $major-color-2;
+          transform-origin: bottom center;
+          transform: rotateZ(-45deg) scale(1.414);
+          animation: slash 5s infinite ease;
+        }
+      }
+    }
+  }
+
+  /* box3 */
+  .text-pic_box {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    margin: 0 128px;
+    @include mobile {
+      margin: 0 65px;
+    }
+
+    .bluepic_box {
+      display: flex;
+      // margin-bottom: 20px;
+      justify-content: space-between;
+      // width: 1200px;
+      margin-bottom: 4rem;
+      @include pad {
+        margin: 3rem 0;
+        flex-direction: column;
+        // align-content: center;
+      }
+      @include mobile {
+        margin: 0 ;
+        padding: 0 1rem;
+      }
+
+      p {
+        display: block;
+        line-height: 2;
+        // margin-left: 100px;
+        font-weight: 500;
+        line-height: 2;
+        align-self: flex-start;
+        @include pad {
+          margin: 3rem 0;
+          align-self: center;
+        }
+      }
+      figure {
+        align-self: flex-end;
+        @include pad {
+          margin: 1rem 0;
+          align-self: center;
+        }
+      }
+    }
+
+    .line_img {
+      display: flex;
+      // width: 1200px;
+      // margin: auto;
+      justify-content: space-between;
+      @include pad {
+        flex-direction: column-reverse;
+      }
+
+      /* line2 */
+      .line2 {
+        position: relative;
+        margin: 40px auto 0 auto;
+        width: 100px;
+        height: 200px;
+        box-sizing: border-box;
+        line-height: 120px;
+        text-indent: 5px;
+        align-self: flex-start;
+        @include pad {
+          margin: 1rem 0;
+          margin-top: 4rem;
+          align-self: center;
+          height: 100px;
+        }
+        @include mobile {
+          margin: 0;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 50px;
+          box-sizing: border-box;
+          border-bottom: 1px solid $major-color-2;
+          transform-origin: bottom center;
+          transform: rotateZ(90deg) scale(1.414);
+          animation: line 5s infinite ease;
+        }
+      }
+    }
+  }
+
+  /* box4 */
+  .aboutus_text {
+    margin: 2rem 128px;
+    // width: 1200px;
+    // margin: 20px auto 50px auto;
+    display: flex;
+    @include pad {
+      margin: 2rem 5rem;
+      padding-left: 3rem;
+      align-self: center;
+    }
+    @include mobile {
+      padding: 0;
+      
+    }
+
+    p {
+      display: block;
+      font-weight: 500;
+      line-height: 2;
+      // margin-left: 100px;
+
+      @include pad {
+        text-align: center;
+        line-height: 3;
+      }
+      @include mobile {
+        line-height: 2;
+        // margin: 0 auto;
+        text-align:left;
+        padding: 0 1.1rem;     
+      }
+    }
+  }
+}
+
+@keyframes slash {
+  0% {
+    transform: rotateZ(0deg) scale(1);
+  }
+
+  30% {
+    transform: rotateZ(-45deg) scale(1);
+  }
+
+  60% {
+    transform: rotateZ(-45deg) scale(1.414);
+  }
+
+  100% {
+    transform: rotateZ(-45deg) scale(1.414);
+  }
+}
+
+@keyframes line {
+  0% {
+    transform: rotateZ(90deg) scale(1);
+  }
+
+  30% {
+    transform: rotateZ(45deg) scale(1.2);
+  }
+
+  60% {
+    transform: rotateZ(45deg) scale(1.35);
+  }
+
+  100% {
+    transform: rotateZ(45deg) scale(1.414);
+  }
+}
