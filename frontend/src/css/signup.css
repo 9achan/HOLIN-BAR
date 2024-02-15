@@ -389,3 +389,42 @@ input {
         margin: 5% auto;
     }
 }
+
+.registration-success-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--major-color-1);
+    border: 1px solid var(--major-color-2);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001; /* Updated z-index to a higher value */
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .popup-content h2 {
+    color: var(--major-color-2);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .popup-content button {
+    background-color: var(--major-color-3);
+    color: var(--major-color-1);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken(var(--major-color-3), 10%);
+    }
+  }
+  
