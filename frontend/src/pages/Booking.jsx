@@ -67,15 +67,26 @@ const Booking = () => {
       );
     }
 
+    const today = new Date();
     for (let i = 1; i <= days; i++) {
       const day = new Date(currentYear, currentMonth, i).getDay();
       const dateString = `${dayNames[day]}-${i}-${monthNames[currentMonth]}-${currentYear}`;
+
+      // 檢查日期是否在當前日期之前
+      const currentDate = new Date(currentYear, currentMonth, i);
+      const isPastDate = currentDate < today;
+
       calendarContent.push(
-        <div key={dateString} className="month">
+        <div
+          key={dateString}
+          className={`month ${isPastDate ? "past-date" : ""}`}
+        >
           <div
             id={dateString}
-            className="month-selector flex center-vh clickable"
-            onClick={() => monthClick(i)}
+            className={`month-selector flex center-vh clickable ${
+              isPastDate ? "disabled" : ""
+            }`}
+            onClick={() => (isPastDate ? null : monthClick(i))}
           >
             <p>{i}</p>
           </div>
@@ -128,7 +139,7 @@ const Booking = () => {
       alert("請選擇預約時間");
       return;
     }
-    
+
     sessionStorage.setItem("person", guestNo);
     sessionStorage.setItem("date", pickDate);
     sessionStorage.setItem("time", pickTime);

@@ -173,6 +173,12 @@
             object-fit: cover;
           }
       }
+
+      @include mobile {
+        height: 18vh;
+        width: 30%;
+        padding-right: 0;
+      }
     }
 
     .intro2_img_item-none {
@@ -193,7 +199,7 @@
       }
 
       @include mobile {
-        width: 90%;
+        width: 70%;
       }
     }
   }

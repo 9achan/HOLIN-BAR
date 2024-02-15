@@ -253,6 +253,11 @@
   justify-content: center;
 }
 
+.past-date {
+  color: lightgrey;  // 將已過日期變成淺灰色
+  cursor: not-allowed;  // 讓過去的日期不可選取
+}
+
 .calender-wrapper-box {
   display: flex;
   justify-content: space-between;
