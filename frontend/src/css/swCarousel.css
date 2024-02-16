@@ -28,21 +28,30 @@
 
 .swiper-slide .title {
   font-family: "Noto Serif TC", serif;
-  font-size: 66px;
+  font-size: 195px;
   font-weight: 300;
   letter-spacing: 20px;
-  height: 90%;
+  height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  margin-left: 8%;
+  margin-left: 4%;
   color: #ededed;
-  opacity: .55;
+  opacity: .35;
   text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 992px) {
+  .swiper-slide .title {
+    font-size: 130px;
+  }
+}
 
-
+@media (max-width: 576px) {
+  .swiper-slide .title {
+    font-size: 50px;
+  }
+}
 
 .mySwiper:hover .swiper-button-prev,
 .mySwiper:hover .swiper-button-next {

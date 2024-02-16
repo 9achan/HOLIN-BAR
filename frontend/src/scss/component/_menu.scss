@@ -24,12 +24,16 @@
       transform: rotate(180deg);
 
       font-family: "Open Sans", sans-serif;
-      font-size: 4rem;
+      font-size: 8rem;
       font-weight: $fw-bold;
       letter-spacing: 0.7rem;
       color: transparent;
       -webkit-text-stroke: 2px var(--major-color3);
       /* For WebKit browsers (Safari, Chrome) */
+
+      @include web {
+        padding-bottom: 3%;
+      }
 
       @include pad {
         width: 100%;
@@ -51,6 +55,9 @@
         display: flex;
 
         .carousel-item__caption {
+          @include pad {
+            padding-left: 6%;
+          }
           @include mobile {
             margin: 0;
             padding: 0;
@@ -62,7 +69,9 @@
 
         .carousel-item__image {
           @include mobile {
-            width: 80%;
+            width: 100%;
+            -webkit-flex-basis: 90%;
+            background-position: initial;
           }
         }
 
@@ -98,6 +107,10 @@
   background-position: bottom;
   background-size: 100%;
   height: calc(100vh - 150px);
+
+  .selected {
+    color: $major-color-1;
+  }
 
   .menu_category {
     display: flex;

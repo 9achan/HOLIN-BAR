@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -165,14 +165,14 @@ const SignUp = () => {
                 <button className="btn signup">註冊</button>
                 <div className="rwdContainer">
                   <h3>已經是會員？立即</h3>
-                  <button
-                    type="button"
+                  <Link
+                    // type="button"
                     className="rwdBtn"
                     id="signIn"
                     onClick={handleSignInClick}
                   >
                     登入
-                  </button>
+                  </Link>
                 </div>
               </form>
             </div>
@@ -207,19 +207,19 @@ const SignUp = () => {
                 <button type="button" className="btn signin" onClick={handleLoginFormSubmit}>
                   登入
                 </button>
-                <button type="button" className="btn google ">
+                {/* <button type="button" className="btn google ">
                   Sign in with Google
-                </button>
+                </button> */}
                 <div className="rwdContainer rwdSignin">
                   <h3>還不是會員？馬上</h3>
-                  <button
-                    type="button"
+                  <Link to="/signup"
+                    // type="button"
                     className="rwdBtn"
                     id="signUp"
                     onClick={handleSignUpClick}
                   >
                     註冊
-                  </button>
+                  </Link>
                   <h3>領取會員禮</h3>
                 </div>
               </form>

@@ -149,26 +149,23 @@ const Booking = () => {
 
   return (
     <>
-      <section className="search-box">
+      <section className="search-box-mob">
         <div className="calender-panel">
           <div className="reserve">
             <div className="guests">
               <label for="guests">用餐人數</label>
-              <div className="guests_counter">
-                <button className="counter-btn" onClick={cntDown} type="button">
-                  -
-                </button>
-                <input
-                  type="text"
-                  name="guests"
-                  value={guestNo}
-                  onChange={(e) => setGuestNo(e.target.value)}
-                  readonly
-                />
-                <button className="counter-btn" onClick={cntUp} type="button">
-                  +
-                </button>
-              </div>
+              <select
+                name="guests"
+                value={guestNo}
+                onChange={(e) => setGuestNo(e.target.value)}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
             </div>
             <div className="reserve-dates">
               <label>預約日期</label>
@@ -197,7 +194,6 @@ const Booking = () => {
           </button>
         </div>
       </section>
-
       <section className="calender-wrapper-box">
         <div className="calender-wrapper-deco">
           <figure className="mirrorY">
@@ -206,6 +202,61 @@ const Booking = () => {
           <figure className="mirrorX">
             <img src="images/booking/pattern5_deco.svg" alt="" />
           </figure>
+        </div>
+        <div className="search-box">
+          <div className="calender-panel">
+            <div className="reserve">
+              <div className="guests">
+                <label for="guests">用餐人數</label>
+                <div className="guests_counter">
+                  <button
+                    className="counter-btn"
+                    onClick={cntDown}
+                    type="button"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    name="guests"
+                    value={guestNo}
+                    onChange={(e) => setGuestNo(e.target.value)}
+                    readonly
+                  />
+                  <button className="counter-btn" onClick={cntUp} type="button">
+                    +
+                  </button>
+                </div>
+              </div>
+              <div className="reserve-dates">
+                <label>預約日期</label>
+                <div className="pickdate-box">
+                  <p
+                    id="pickDate"
+                    onChange={(e) => setPickDate(e.target.value)}
+                  >
+                    {pickDate}
+                  </p>
+                </div>
+              </div>
+              <div className="reserve-times">
+                <label>預約時間</label>
+                <select
+                  name="booking-times"
+                  id="pickTime"
+                  onChange={(e) => setPickTime(e.target.value)}
+                >
+                  <option value="">請選擇</option>
+                  <option value="19:00">19:00</option>
+                  <option value="22:00">22:00</option>
+                  <option value="01:00">01:00</option>
+                </select>
+              </div>
+            </div>
+            <button className="booking-btn" onClick={saveData}>
+              搜尋
+            </button>
+          </div>
         </div>
         <div className="calender-wrapper">
           <div className="calender-title">

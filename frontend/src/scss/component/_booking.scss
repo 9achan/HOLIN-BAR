@@ -1,16 +1,19 @@
 @use "../variable/" as *;
 @use "../function/" as *;
 
-.search-box {
-  margin-top: 90px;
+.search-box,
+.search-box-mob {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 24vh;
+  height: 100%;
+  width: 35%;
   background-color: $major-color-1;
+  margin-left: 10%;
 
   .calender-panel {
-    width: 70%;
+    width: 100%;
+    height: 90%;
     border: 4px solid #fff;
     background-color: $major-color-2;
     box-shadow: 0px 0px 20px 3px rgba(53, 57, 56, 0.2);
@@ -19,29 +22,28 @@
     text-align: center;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 3% 6%;
 
     .reserve {
-      width: 80%;
+      // width: 80%;
       font-size: 1em;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
 
       label {
         color: $major-color-1;
         font-family: $ff-tc-sans;
         font-size: $fs-l;
-        margin-bottom: 10%;
-
-        @include mobile {
-          font-size: $fs-s;
-        }
+        margin-bottom: 6%;
       }
 
       /* 用餐人數 */
       .guests {
-        width: 30%;
+        // width: 30%;
+        margin: 5% 10%;
 
         display: flex;
         flex-direction: column;
@@ -73,12 +75,6 @@
             .counter-btn:hover {
               box-shadow: 1px 3px 20px rgba(237, 237, 237, 0.2);
             }
-
-            @include mobile {
-              font-size: $fs-m;
-              background-color: $major-color-2;
-              color: $major-color-1;
-            }
           }
 
           input {
@@ -107,21 +103,18 @@
             @include pad {
               font-size: $fs-m;
             }
-
-            @include mobile {
-              font-size: $fs-s;
-            }
           }
         }
 
-        @include mobile {
-          width: 25%;
+        @include pad {
+          margin: 10% 5%;
         }
       }
 
       /* 預約日期 */
       .reserve-dates {
-        width: 30%;
+        // width: 30%;
+        margin: 5% 10%;
 
         display: flex;
         flex-direction: column;
@@ -130,7 +123,7 @@
 
         .pickdate-box {
           width: 100%;
-          height: 50%;
+          height: 50px;
           font-family: $ff-en-sans;
           font-size: $fs-l;
           background-color: $major-color-1;
@@ -142,39 +135,40 @@
           p {
             display: flex;
             align-items: center;
+
+            width: 100%;
+            height: 100%;
+            padding: 3%;
           }
 
           @include pad {
             font-size: $fs-m;
           }
-
-          @include mobile {
-            font-size: $fs-s;
-          }
         }
 
-        @include mobile {
-          width: 40%;
+        @include pad {
+          margin: 10% 5%;
         }
       }
 
       /* 預約時間 */
       .reserve-times {
-        width: 30%;
+        // width: 30%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
+        margin: 5% 10%;
 
         select {
-          width: 80%;
-          height: 50%;
+          width: 100%;
+          height: 50px;
           background-color: $major-color-1;
           border-radius: 12px;
           font-family: $ff-en-sans;
           font-size: $fs-l;
           color: $major-color-2;
-          padding: 0 5%;
+          padding: 3%;
           border: none;
           cursor: pointer;
           outline: none;
@@ -182,27 +176,24 @@
           @include pad {
             font-size: $fs-m;
           }
+        }
 
-          @include mobile {
-            width: 85%;
-            font-size: $fs-s;
-          }
+        @include pad {
+          margin: 10% 5%;
         }
       }
 
       @include pad {
-        width: 85%;
-      }
-
-      @include mobile {
-        width: 95%;
+        width: 100%;
+        margin: 0 auto;
       }
     }
 
     /* 搜尋按鈕區 */
     .booking-btn {
+      width: 30%;
       border: none;
-      padding: 1% 3%;
+      padding: 2%;
       border: 1px solid $major-color-1;
       color: $major-color-2;
       font-family: $ff-tc-sans;
@@ -211,35 +202,147 @@
       box-shadow: 1px 3px 20px rgba(17, 17, 17, 0.1);
       border-radius: 12px;
       outline: none;
-      margin-top: auto;
+      margin: 0 auto;
 
       &:hover {
         background: $major-color-3;
         color: $major-color-1;
       }
 
-      @include mobile {
-        font-size: $fs-s;
-        padding: 1%;
-        letter-spacing: 0;
-      }
-    }
-
-    @include pad {
-      width: 85%;
-    }
-
-    @include mobile {
-      width: 95%;
+      // @include mobile {
+      //   font-size: $fs-s;
+      //   padding: 1%;
+      //   letter-spacing: 0;
+      // }
     }
   }
 
   @include pad {
-    height: 20vh;
+    margin-left: 0;
+  }
+}
+
+.search-box {
+  @include mobile {
+    display: none;
+  }
+}
+
+.search-box-mob {
+  display: none;
+
+  .calender-panel {
+    .reserve {
+      label {
+        @include mobile {
+          font-size: $fs-s;
+          margin-bottom: 10%;
+        }
+      }
+
+      /* 用餐人數 */
+      .guests {
+        select {
+          @include mobile {
+            width: 85%;
+            height: 30px;
+            font-size: $fs-s;
+  
+            height: 40px;
+            background-color: $major-color-1;
+            border-radius: 12px;
+            font-family: $ff-en-sans;
+            color: $major-color-2;
+            padding: 3%;
+            border: none;
+            cursor: pointer;
+            outline: none;
+          }
+        }
+
+        @include mobile {
+          width: 25%;
+          margin: 0;
+        }
+      }
+
+      /* 預約日期 */
+      .reserve-dates {
+        .pickdate-box {
+          p {
+            @include mobile {
+              height: 100%;
+            }
+          }
+          @include mobile {
+            width: 90%;
+            height: 40px;
+            font-size: $fs-s;
+          }
+        }
+
+        @include mobile {
+          width: 40%;
+          margin: 0;
+        }
+      }
+
+      /* 預約時間 */
+      .reserve-times {
+        select {
+          @include mobile {
+            width: 100%;
+            height: 30px;
+            font-size: $fs-s;
+  
+            height: 40px;
+            background-color: $major-color-1;
+            border-radius: 12px;
+            font-family: $ff-en-sans;
+            color: $major-color-2;
+            padding: 3%;
+            border: none;
+            cursor: pointer;
+            outline: none;
+          }
+        }
+        @include mobile {
+          width: 35%;
+          margin: 0;
+        }
+      }
+
+      @include mobile {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+      }
+    }
+
+    /* 搜尋按鈕區 */
+    .booking-btn {
+      @include mobile {
+        width: 50%;
+        font-size: $fs-s;
+        padding: 3%;
+        letter-spacing: 0;
+        margin-top: 3%;
+      }
+    }
+
+    @include mobile {
+      width: 95%;
+      justify-content: space-between;
+      padding: 10% 6%;
+    }
   }
 
   @include mobile {
-    height: 16vh;
+    display: flex;
+    margin-top: 90px;
+    width: 100%;
+    height: 35vh;
   }
 }
 
@@ -254,8 +357,8 @@
 }
 
 .past-date {
-  color: lightgrey;  // 將已過日期變成淺灰色
-  cursor: not-allowed;  // 讓過去的日期不可選取
+  color: lightgrey; // 將已過日期變成淺灰色
+  cursor: not-allowed; // 讓過去的日期不可選取
 }
 
 .calender-wrapper-box {
@@ -264,13 +367,16 @@
   align-items: center;
   padding: 1% 0;
   width: 100%;
-  height: calc(100vh - 90px - 24vh);
+  height: calc(100vh - 90px - 102px);
   background-color: $major-color-1;
+  margin-top: 90px;
 
   .calender-wrapper-deco {
-    width: 20%;
+    width: 10%;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    margin-bottom: 25%;
 
     .mirrorY {
       width: 85%;
@@ -304,6 +410,10 @@
       }
     }
 
+    @include web {
+      margin-bottom: 15%;
+    }
+
     @include pad {
       width: 10%;
     }
@@ -321,17 +431,18 @@
     border-radius: 12px;
     border-radius: 12px;
     overflow: hidden;
-    width: 60%;
-    height: 100%;
+    width: 45%;
+    height: 90%;
     padding: 0 3%;
 
     @include pad {
-      width: 80%;
-      height: 95%;
+      width: 60%;
+      height: 90%;
     }
 
     @include mobile {
-      width: 90%;
+      width: 95%;
+      height: 100%;
       margin: 0 auto;
     }
   }
@@ -434,7 +545,7 @@
   }
 
   .calender-wrapper-deco-txt {
-    width: 20%;
+    width: 6%;
     height: 100%;
     writing-mode: vertical-rl;
     display: flex;
@@ -444,14 +555,17 @@
     letter-spacing: 12px;
 
     @include pad {
-      width: 10%;
-      font-size: $heading-size-m;
-    }
-
-    @include mobile {
-      width: 10%;
       display: none;
     }
+  }
+
+  @include pad {
+    justify-content: space-around;
+  }
+
+  @include mobile {
+    margin-top: 0;
+    height: calc(100vh - 90px - 35vh);
   }
 }
 
