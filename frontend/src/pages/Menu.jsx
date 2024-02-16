@@ -4,6 +4,7 @@ import "../css/carousel.css";
 const Menu = () => {
   const [current, setCurrent] = useState(0);
   const total = 3; // 假設總共有3個輪播項目
+  const [selectedCategory, setSelectedCategory] = useState("category1"); // 新增選中的類別狀態
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -49,8 +50,24 @@ const Menu = () => {
     const selectedCategory = document.getElementById(category);
     if (selectedCategory) {
       selectedCategory.style.display = "block";
+      setSelectedCategory(category); // 更新選定的類別
     }
   };
+
+  // 加入對按鈕樣式的立即更改
+  useEffect(() => {
+    // 更改按鈕樣式
+    const figureElements = document.querySelectorAll(
+      ".menu_category_li figure img"
+    );
+    figureElements.forEach((img) => {
+      if (img.parentElement.parentElement.classList.contains("selected")) {
+        img.src = "images/menu/btn-fill.svg";
+      } else {
+        img.src = "images/menu/btn-light.svg";
+      }
+    });
+  }, [selectedCategory]);
 
   return (
     <>
@@ -121,31 +138,51 @@ const Menu = () => {
 
         <section className="pages_menu">
           <ul className="menu_category">
-            <li className="menu_category_li">
+            <li
+              className={`menu_category_li ${
+                selectedCategory === "category1" ? "selected" : ""
+              }`}
+            >
               <h4 onClick={() => showCategory("category1")}>河林特調</h4>
               <figure>
                 <img src="images/menu/btn-light.svg" alt="" />
               </figure>
             </li>
-            <li className="menu_category_li">
+            <li
+              className={`menu_category_li ${
+                selectedCategory === "category2" ? "selected" : ""
+              }`}
+            >
               <h4 onClick={() => showCategory("category2")}>季節限定</h4>
               <figure>
                 <img src="images/menu/btn-light.svg" alt="" />
               </figure>
             </li>
-            <li className="menu_category_li">
+            <li
+              className={`menu_category_li ${
+                selectedCategory === "category3" ? "selected" : ""
+              }`}
+            >
               <h4 onClick={() => showCategory("category3")}>經典調酒</h4>
               <figure>
                 <img src="images/menu/btn-light.svg" alt="" />
               </figure>
             </li>
-            <li className="menu_category_li">
+            <li
+              className={`menu_category_li ${
+                selectedCategory === "category4" ? "selected" : ""
+              }`}
+            >
               <h4 onClick={() => showCategory("category4")}>軟性飲料</h4>
               <figure>
                 <img src="images/menu/btn-light.svg" alt="" />
               </figure>
             </li>
-            <li className="menu_category_li">
+            <li
+              className={`menu_category_li ${
+                selectedCategory === "category5" ? "selected" : ""
+              }`}
+            >
               <h4 onClick={() => showCategory("category5")}>美味餐點</h4>
               <figure>
                 <img src="images/menu/btn-light.svg" alt="" />

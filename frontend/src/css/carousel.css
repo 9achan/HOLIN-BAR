@@ -17,13 +17,13 @@
 }
 
 .menu-carousel {
-    /* border: #bc9f77 2px solid; */
     width: 80%;
     /* height: calc(100vh - 80px - 10vh); */
     display: flex;
     overflow: hidden;
     position: relative;
     margin-left: 5%;
+    padding-top: 5%;
 }
 
 .carousel-item {
@@ -48,6 +48,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: absolute;
 
     display: -webkit-flex;
     -webkit-justify-content: center;
@@ -56,8 +57,9 @@
     order: 1;
     left: 0;
     margin: auto;
-    padding: 0 40px;
-    width: 40%;
+    padding-left: 10%;
+    padding-bottom: 20%;
+    width: 60%;
 }
 
 .carousel-item__image {
@@ -69,7 +71,7 @@
 
     -webkit-order: 2;
     -webkit-align-self: center;
-    -webkit-flex-basis: 60%;
+    -webkit-flex-basis: 80%;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -82,7 +84,7 @@
 .carousel-item__mandarin {
     margin: 15px 0 0 0;
     font-family: "Noto Serif TC", serif;
-    font-size: 44px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 45px;
     letter-spacing: 3px;
