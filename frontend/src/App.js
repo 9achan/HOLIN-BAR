@@ -5,7 +5,7 @@ import "./css/style.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Layout2 from "./Layout2";
-
+import CouponPage from "./pages/Coupon";
 import HomePages from "./pages/HomePages";
 import Booking from "./pages/Booking";
 import Menu from "./pages/Menu";
@@ -25,6 +25,7 @@ function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/news" element={<News />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/coupon" element={<CouponPage/>} />
         </Route>
         <Route path="/" element={<Layout2 />}>
           <Route path="/signup" element={<SignUp />} />
