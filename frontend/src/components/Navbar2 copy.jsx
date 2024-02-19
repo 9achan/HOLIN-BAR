@@ -151,68 +151,70 @@ const Navbar2 = () => {
             <button>
               <Link to="/" onClick={toggleMenu}>
                 <div>
-                  {/* <img
+                  <img
                     src="./images/hamburger/pattern1_wave_white.svg"
                     alt=""
                     width="180px"
                     height="170px"
-                  /> */}
+                  />
                   <span className="button-text">首頁</span>
                 </div>
               </Link>
             </button>
             <button>
               <Link to="/news" onClick={toggleMenu}>
-                {/* <img
+                <img
                   src="./images/hamburger/pattern1_wave_white.svg"
                   alt=""
                   width="180px"
                   height="170px"
-                /> */}
+                />
                 <span className="button-text">最新消息</span>
               </Link>
             </button>
             <button>
               <Link to="/aboutus" onClick={toggleMenu}>
-                {/* <img
+                <img
                   src="./images/hamburger/pattern1_wave_white.svg"
                   alt=""
                   width="180px"
                   height="170px"
-                /> */}
+                />
                 <span className="button-text">關於我們</span>
               </Link>
             </button>
+          </div>
+          <div className="button-row">
             <button>
               <Link to="/signup" onClick={toggleMenu}>
-                {/* <img
+                <img
                   src="./images/hamburger/pattern1_wave_white.svg"
                   alt=""
                   width="180px"
                   height="170px"
-                /> */}
+                />
                 <span className="button-text">會員登入</span>
               </Link>
             </button>
             <button>
               <Link to="/menu" onClick={toggleMenu}>
-                {/* <img
+                <img
                   src="./images/hamburger/pattern1_wave_white.svg"
                   alt=""
                   width="180px"
                   height="170px"
-                /> */}
+                />
                 <span className="button-text">菜單</span>
               </Link>
             </button>
             <button>
               <Link to="/booking" onClick={toggleMenu}>
-                {/* <img
+                <img
                   src="./images/hamburger/pattern1_wave_white.svg"
                   alt=""
                   width="180px"
                   height="170px"
-                /> */}
+                />
                 <span className="button-text">一般訂位</span>
               </Link>
             </button>
