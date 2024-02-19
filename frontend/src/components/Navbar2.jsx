@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import QRCode from "qrcode.react";
-import CouponPopup from "./CouponPopup";
+
 import axios from "axios";
 
 import "../css/navbar2.css";
