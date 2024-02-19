@@ -218,7 +218,7 @@ const BookingJumpPage = () => {
               </div>
               <div className="overlay__panel overlay--right">
                 <Link to="/" className="bookingJumpPageBtn">
-                  河林
+                  回首頁
                 </Link>
               </div>
             </div>
