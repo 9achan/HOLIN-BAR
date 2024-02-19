@@ -88,7 +88,9 @@ const Navbar2 = () => {
         <div className="header-wrapper">
           <div className="logo-wrap">
             <Link to="/" className="hover-target">
-              <img src="images/logo_b.svg" alt="holin logo" />
+              <figure style={{width: "64px"}}>
+                <img src="images/holinLogo.svg" alt="holin logo" />
+              </figure>
             </Link>
           </div>
           <nav>
