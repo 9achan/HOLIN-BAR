@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
+import QRCode from "qrcode.react";
+import CouponPopup from "./CouponPopup";
 import axios from "axios";
 
 import "../css/navbar2.css";
@@ -8,6 +10,7 @@ import "../css/navbar2.css";
 const Navbar2 = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
+  const [showCouponPopup, setShowCouponPopup] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -82,13 +85,21 @@ const Navbar2 = () => {
   //   setIsOpen(false);
   // };
 
+  const handleCouponClick = () => {
+    setShowCouponPopup(true); // Open the coupon popup when clicked
+  };
+
+  const handleCloseCouponPopup = () => {
+    setShowCouponPopup(false); // Close the coupon popup when clicked outside
+  };
+
   return (
     <>
       <header className="cd-header">
         <div className="header-wrapper">
           <div className="logo-wrap">
             <Link to="/" className="hover-target">
-              <figure style={{width: "64px"}}>
+              <figure style={{ width: "64px" }}>
                 <img src="images/holinLogo.svg" alt="holin logo" />
               </figure>
             </Link>
@@ -97,35 +108,33 @@ const Navbar2 = () => {
             {isVisible && (
               <ul className="menu">
                 <li>
-                  <Link to="/booking" className="hover-target nav-link">
+                  <Link to="/booking" className="hover-target nav-link rwd-noShow">
                     訂位
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/menu" className="hover-target nav-link">
+                  <Link to="/menu" className="hover-target nav-link rwd-noShow">
                     菜單
                   </Link>
                 </li>
                 <li>
                   {/* 使用條件渲染決定要顯示 Dropdown 還是 Link */}
                   {isLoggedIn ? (
-                    <Dropdown>
-                      <Dropdown.Toggle
-                        className="hover-target nav_member nav-link"
-                        id="dropdown-basic"
-                      >
-                        {username}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#">會員資料</Dropdown.Item>
-                        <Dropdown.Item href="#">優惠券</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Item href="#" onClick={handleLogout}>
-                          登出
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
+                   <Dropdown>
+                   <Dropdown.Toggle className="hover-target nav_member nav-link" id="dropdown-basic">
+                     {username}
+                   </Dropdown.Toggle>
+                   <Dropdown.Menu>
+                     <Dropdown.Item href="#">會員資料</Dropdown.Item>
+                     {/* Handle the coupon click event */}
+                     <Dropdown.Item onClick={handleCouponClick}>優惠券</Dropdown.Item>
+                     <Dropdown.Divider />
+                     <Dropdown.Item href="#" onClick={handleLogout}>登出</Dropdown.Item>
+                   </Dropdown.Menu>
+                 </Dropdown>
+
+
                   ) : (
                     <Link
                       to="/signup"
@@ -134,6 +143,15 @@ const Navbar2 = () => {
                       會員
                     </Link>
                   )}
+                   {showCouponPopup && (
+        <div className="popup" onClick={handleCloseCouponPopup}>
+          <div className="popup-inner">
+            <h2>請將條碼出示給現場人員</h2>
+            <QRCode value="088853250428:000002AKCWNU4KKG" size={256} />
+            {/* <button className="qrcode-close-bt" onClick={handleCloseCouponPopup}>Close</button> */}
+            </div>
+        </div>
+      )}
                 </li>
               </ul>
             )}
