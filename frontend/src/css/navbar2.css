@@ -116,6 +116,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   margin-top: 36px;
+  cursor: pointer;
 }
 @media (max-width: 576px) {
   nav img {

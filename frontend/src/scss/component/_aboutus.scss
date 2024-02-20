@@ -18,10 +18,18 @@
   position: relative;
   // width: 1440px;
   margin: 0 auto;
+  font-size: $fs-xl;
+  margin-top: 90px;
 
   @include web {
     margin: 0 10rem;
     // background-color: $major-color-1;
+  }
+  @include pad{
+    font-size: $fs-l;
+  }
+  @include mobile{
+    font-size: $fs-m;
   }
   img {
     width: 100%;
@@ -36,7 +44,7 @@
     z-index: -9999;
   }
   
-  margin-top: 90px;
+  
 
   // @include pad {
   //     width: 100%;
@@ -323,7 +331,7 @@
           height: 100px;
         }
         @include mobile {
-          margin: 0;
+          margin: 3rem 0 0;
         }
 
         &::before {
