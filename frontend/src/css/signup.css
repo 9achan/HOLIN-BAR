@@ -275,6 +275,10 @@ video {
     outline: none;
 }
 
+.btn:hover {
+    background-color: var(--major-color-3);
+}
+
 .form {
     background-color: var(--major-color-1);
     display: flex;

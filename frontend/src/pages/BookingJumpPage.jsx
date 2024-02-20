@@ -198,7 +198,7 @@ const BookingJumpPage = () => {
               </div> */}
               <div className="rwdContainer">
                 <Link to="/" className="bookingJumpPageBtn">
-                  河林
+                  回首頁
                 </Link>
               </div>
             </form>
