@@ -61,6 +61,7 @@ const HomePages = () => {
         <div className="swiper-button-prev swiper-button-white"></div>
         <div className="swiper-button-next swiper-button-white"></div>
       </Swiper>
+      <div className="container-bg">
       <section className="container-fluid">
         <div className="intro1">
           <h2 className="heading">
@@ -202,6 +203,7 @@ const HomePages = () => {
       <section className="envtpic">
         <img src="./images/index/index_bg.jpg" className="img-fluid" alt="" />
       </section>
+      </div>
     </>
   );
 };
