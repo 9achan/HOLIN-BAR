@@ -193,14 +193,14 @@ const Navbar2 = () => {
               </Link>
             </button>
             <button>
-              <Link to="/aboutus" onClick={toggleMenu}>
+              <Link to="/booking" onClick={toggleMenu}>
                 {/* <img
                   src="./images/hamburger/pattern1_wave_white.svg"
                   alt=""
                   width="180px"
                   height="170px"
                 /> */}
-                <span className="button-text">關於我們</span>
+                <span className="button-text">一般訂位</span>
               </Link>
             </button>
             <button>
@@ -226,14 +226,14 @@ const Navbar2 = () => {
               </Link>
             </button>
             <button>
-              <Link to="/booking" onClick={toggleMenu}>
+              <Link to="/aboutus" onClick={toggleMenu}>
                 {/* <img
                   src="./images/hamburger/pattern1_wave_white.svg"
                   alt=""
                   width="180px"
                   height="170px"
                 /> */}
-                <span className="button-text">一般訂位</span>
+                <span className="button-text">關於我們</span>
               </Link>
             </button>
           </div>
