@@ -39,287 +39,291 @@
     font-size: $fs-s;
   }
 }
-
-.container-fluid {
-  width: 90%;
-  flex-wrap: wrap;
-  font-family: $ff-tc-sans;
-
-  /* intro1區 */
-  .intro1_contents {
-    display: flex;
-    margin-bottom: 5%;
-
-    .intro1_info {
-      width: 50%;
-      letter-spacing: $ls-l;
-
-      .intro1_info_access {
-        padding: 5% 0;
-        font-size: $fs-m;
-
-        .intro1_info_access_holin,
-        .intro1_info_access_addr {
-          margin: 0 0 16px 0;
-        }
-
-        .intro1_info_access_time {
-          line-height: $lh-s;
-        }
-
-        @include pad {
-          font-size: $fs-s;
-        }
-      }
-
-      @include pad {
-        width: 100%;
-      }
-
-      @include mobile {
-        width: 100%;
-      }
-    }
-
-    .intro1_img {
-      width: 50%;
-      position: relative;
-
-      .intro1_img_large {
-        /* z-index: 1; */
-        width: 60%;
-        height: 60%;
-        position: absolute;
-        right: 0;
-        top: 0;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-        }
-
-        @include pad {
-          width: 35%;
-          height: 350%;
-          right: 5%;
-          top: -140%;
-        }
-
-        @include mobile {
-          display: none;
-        }
-      }
-
-      .intro1_img_small {
-        /* z-index: 1; */
-        width: 60%;
-        height: 60%;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-        }
-
-        @include pad {
-          width: 35%;
-          height: 350%;
-          left: 20%;
-          bottom: 50%;
-        }
-
-        @include mobile {
-          width: 60%;
-          height: 300%;
-          left: 30%;
-          bottom: 50%;
-        }
-      }
-
-      @include pad {
-        width: 80%;
-        height: 5vh;
-        margin-left: 20%;
-      }
-    }
-
-    @include pad {
-      flex-direction: column-reverse;
-    }
-  }
-
-  /* intro2區 */
-  .intro2 {
-    display: flex;
-
-    .intro2_img {
-      width: 65%;
+.container-bg{
+  background-color: $major-color-1;
+  width: 100%;
+  .container-fluid {
+    width: 90%;
+    flex-wrap: wrap;
+    font-family: $ff-tc-sans;
+  
+    /* intro1區 */
+    .intro1_contents {
       display: flex;
-      justify-content: space-around;
-      padding-right: 10%;
-
-      @include pad {
-          height: 40vh;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-      }
-
-      @include mobile {
-        height: 18vh;
-        width: 30%;
-        padding-right: 0;
-      }
-    }
-
-    .intro2_img_item-none {
-      @include pad {
-        display: none;
-      }
-    }
-
-    .intro2_contents {
-      width: 35%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: right;
-
-      @include pad {
-        width: 55%;
-      }
-
-      @include mobile {
-        width: 70%;
-      }
-    }
-  }
-
-  /* intro3區 */
-  .intro3 {
-    display: flex;
-
-    .intro3_contents {
-      display: flex;
-      width: 100%;
-
-      .intro3_info {
+      margin-bottom: 5%;
+  
+      .intro1_info {
         width: 50%;
-        margin-top: 20%;
-        margin-left: 5%;
         letter-spacing: $ls-l;
-
-        .intro3_info_title {
-          font-size: $fs-xl;
-          margin-bottom: 5%;
-
+  
+        .intro1_info_access {
+          padding: 5% 0;
+          font-size: $fs-m;
+  
+          .intro1_info_access_holin,
+          .intro1_info_access_addr {
+            margin: 0 0 16px 0;
+          }
+  
+          .intro1_info_access_time {
+            line-height: $lh-s;
+          }
+  
           @include pad {
-            font-size: $fs-l;
-          }
-
-          @include mobile {
-            font-size: $fs-m;
-          }
-        }
-
-        .intro3_info_txt {
-          font-size: $fs-l;
-          line-height: $lh-l;
-
-          @include pad {
-            font-size: $fs-m;
-          }
-
-          @include mobile {
             font-size: $fs-s;
-            line-height: $lh-m;
           }
         }
-
+  
         @include pad {
-          display: block;
           width: 100%;
-          margin-top: 10%;
+        }
+  
+        @include mobile {
+          width: 100%;
         }
       }
-
-      .intro3_img {
+  
+      .intro1_img {
         width: 50%;
         position: relative;
-
-        .intro3_img_large {
+  
+        .intro1_img_large {
           /* z-index: 1; */
           width: 60%;
-          height: 40%;
-          position: absolute;
-          left: 0;
-          top: 15%;
-          transform: scaleX(-1);
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-          }
-
-          @include pad {
-            display: none;
-          }
-        }
-
-        .intro3_img_small {
-          /* z-index: 1; */
-          width: 60%;
-          height: 40%;
+          height: 60%;
           position: absolute;
           right: 0;
-          bottom: 10%;
-
+          top: 0;
+  
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
           }
-
+  
           @include pad {
-            width: 50%;
-            height: 330%;
-            bottom: 100%;
+            width: 35%;
+            height: 350%;
+            right: 5%;
+            top: -140%;
           }
-
+  
           @include mobile {
             display: none;
           }
         }
-
+  
+        .intro1_img_small {
+          /* z-index: 1; */
+          width: 60%;
+          height: 60%;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+  
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+  
+          @include pad {
+            width: 35%;
+            height: 350%;
+            left: 20%;
+            bottom: 50%;
+          }
+  
+          @include mobile {
+            width: 60%;
+            height: 300%;
+            left: 30%;
+            bottom: 50%;
+          }
+        }
+  
         @include pad {
           width: 80%;
           height: 5vh;
           margin-left: 20%;
         }
-
+      }
+  
+      @include pad {
+        flex-direction: column-reverse;
+      }
+    }
+  
+    /* intro2區 */
+    .intro2 {
+      display: flex;
+  
+      .intro2_img {
+        width: 65%;
+        display: flex;
+        justify-content: space-around;
+        padding-right: 10%;
+  
+        @include pad {
+            height: 40vh;
+  
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+        }
+  
         @include mobile {
-          height: 0;
+          height: 18vh;
+          width: 30%;
+          padding-right: 0;
         }
       }
-
-      @include pad {
+  
+      .intro2_img_item-none {
+        @include pad {
+          display: none;
+        }
+      }
+  
+      .intro2_contents {
+        width: 35%;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        text-align: right;
+  
+        @include pad {
+          width: 55%;
+        }
+  
+        @include mobile {
+          width: 70%;
+        }
+      }
+    }
+  
+    /* intro3區 */
+    .intro3 {
+      display: flex;
+  
+      .intro3_contents {
+        display: flex;
+        width: 100%;
+  
+        .intro3_info {
+          width: 50%;
+          margin-top: 20%;
+          margin-left: 5%;
+          letter-spacing: $ls-l;
+  
+          .intro3_info_title {
+            font-size: $fs-xl;
+            margin-bottom: 5%;
+  
+            @include pad {
+              font-size: $fs-l;
+            }
+  
+            @include mobile {
+              font-size: $fs-m;
+            }
+          }
+  
+          .intro3_info_txt {
+            font-size: $fs-l;
+            line-height: $lh-l;
+  
+            @include pad {
+              font-size: $fs-m;
+            }
+  
+            @include mobile {
+              font-size: $fs-s;
+              line-height: $lh-m;
+            }
+          }
+  
+          @include pad {
+            display: block;
+            width: 100%;
+            margin-top: 10%;
+          }
+        }
+  
+        .intro3_img {
+          width: 50%;
+          position: relative;
+  
+          .intro3_img_large {
+            /* z-index: 1; */
+            width: 60%;
+            height: 40%;
+            position: absolute;
+            left: 0;
+            top: 15%;
+            transform: scaleX(-1);
+  
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+  
+            @include pad {
+              display: none;
+            }
+          }
+  
+          .intro3_img_small {
+            /* z-index: 1; */
+            width: 60%;
+            height: 40%;
+            position: absolute;
+            right: 0;
+            bottom: 10%;
+  
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+  
+            @include pad {
+              width: 50%;
+              height: 330%;
+              bottom: 100%;
+            }
+  
+            @include mobile {
+              display: none;
+            }
+          }
+  
+          @include pad {
+            width: 80%;
+            height: 5vh;
+            margin-left: 20%;
+          }
+  
+          @include mobile {
+            height: 0;
+          }
+        }
+  
+        @include pad {
+          flex-direction: column;
+        }
       }
     }
   }
 }
+
 
 // envtpic區
 .envtpic {
@@ -328,7 +332,7 @@
   background-color: $major-color-1;
   overflow: hidden;
 
-  .envtpic img {
+  img {
     width: 100%;
   }
 
