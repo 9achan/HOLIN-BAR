@@ -25,7 +25,7 @@ const Navbar2 = () => {
   const loadMemberInfo = async (userId, token) => {
     try {
       const response = await axios.get(
-        `http://localhost:5501/users/${userId}`,
+        `https://holin-bar-backend-njle.onrender.com/users/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

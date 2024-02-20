@@ -57,7 +57,7 @@ const SignUp = () => {
   const handleSignUpFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5501/users/', signUpFormData);
+      const response = await axios.post('https://holin-bar-backend-njle.onrender.com/users/', signUpFormData);
       console.log('註冊成功：', response.data);
       setRegistrationSuccess(true);
     } catch (error) {
@@ -69,7 +69,7 @@ const SignUp = () => {
   const handleLoginFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5501/users/login', loginFormData);
+      const response = await axios.post('https://holin-bar-backend-njle.onrender.com/users/login', loginFormData);
       const { token, _id } = response.data;
       localStorage.setItem('authToken', token);
       localStorage.setItem('user_id', _id);
