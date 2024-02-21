@@ -112,7 +112,7 @@ const SignUp = () => {
                   value={signUpFormData.name}
                   onChange={handleSignUpInputChange}
                   title="請輸入姓名"
-                  placeholder="王大明"
+                  placeholder="王大明 (僅限中英文)"
                   required
                   autoComplete="on"
                   autoFocus
@@ -160,6 +160,7 @@ const SignUp = () => {
                   value={signUpFormData.birthday}
                   onChange={handleSignUpInputChange}
                   title="請選擇生日"
+                  placeholder="19990101"
                   required
                 />
                 <button className="btn signup">註冊</button>
@@ -181,15 +182,15 @@ const SignUp = () => {
             <div className="container__form container--signin">
               <form action="#" className="form" id="loginForm" onSubmit={handleLoginFormSubmit}>
                 <h2 className="form__title">登入</h2>
-                <label htmlFor="login-username">帳號*</label>
+                <label htmlFor="login-username">姓名*</label>
                 <input
                   type="text"
                   name="name"
                   id="login-username"
                   value={loginFormData.name}
                   onChange={handleLoginInputChange}
-                  title="請輸入帳號"
-                  placeholder="請輸入帳號"
+                  title="請輸入姓名"
+                  placeholder="請輸入姓名"
                   required
                 />
                 <label htmlFor="login-password">密碼*</label>
