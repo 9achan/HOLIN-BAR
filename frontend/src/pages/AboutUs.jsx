@@ -4,7 +4,8 @@ const AboutUs = () => {
   return (
     <>
       {/* 主要內容區 */}
-      <div className="aboutus">
+      <div className="aboutus-bg">
+        <div className="aboutus">
         {/* box1-河林圖 */}
         <div className="logo-pic_box">
           <div className="ho">
@@ -90,7 +91,9 @@ const AboutUs = () => {
             歡迎您共同參與這場茶與酒的奇幻冒險，感受無限的可能性！
           </p>
         </div>
+        </div>
       </div>
+
     </>
   );
 };
