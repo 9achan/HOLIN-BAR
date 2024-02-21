@@ -76,6 +76,7 @@ const SignUp = () => {
       console.log('登入成功：', response.data);
       setLoggedIn(true);
     } catch (error) {
+      alert("請輸入正確的姓名和密碼");
       console.error('登入失敗：', error);
     }
   };
@@ -94,6 +95,40 @@ const SignUp = () => {
   if (loggedIn) {
     return <Navigate to="/" />;
   }
+
+
+
+  const checkSignUpClick = () => {
+    const nameRegex = /^[\u4e00-\u9fa5a-zA-Z\s]+$/;
+    if (!nameRegex.test(signUpFormData.name)) {
+      alert("姓名欄位僅限中英文");
+      return;
+    }
+
+    const passwordRegex = /^[A-Za-z0-9]{8,24}$/;
+    if (!passwordRegex.test(signUpFormData.password)) {
+      alert("密碼欄位請輸入大小寫英文和數字，長度限制8到24字元");
+      return;
+    }
+
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!emailRegex.test(signUpFormData.email)) {
+      alert("請輸入有效的電子郵件，範例：myaccount@mail.com");
+      return;
+    }
+
+    const telephoneRegex = /^\d{10}$/; // 十位數字
+    if (!telephoneRegex.test(signUpFormData.telephone)) {
+      alert("請輸入有效的電話號碼，範例：0987654321");
+      return;
+    }
+
+    const birthdayRegex = /^\d{8}$/;
+    if (!birthdayRegex.test(signUpFormData.birthday)) {
+      alert("請輸入有效的生日，範例：YYYYMMDD");
+      return;
+    }
+  };
 
   return (
     <>
@@ -154,7 +189,7 @@ const SignUp = () => {
                 />
                 <label htmlFor="signup-birthday">生日*</label>
                 <input
-                  type="number"
+                  type="text"
                   name="birthday"
                   id="signup-birthday"
                   value={signUpFormData.birthday}
@@ -163,7 +198,7 @@ const SignUp = () => {
                   placeholder="19990101"
                   required
                 />
-                <button className="btn signup">註冊</button>
+                <button className="btn signup" onClick={checkSignUpClick}>註冊</button>
                 <div className="rwdContainer">
                   <h3>已經是會員？立即</h3>
                   <Link
@@ -247,7 +282,7 @@ const SignUp = () => {
       {registrationSuccess && (
         <div className="registration-success-popup">
           <div className="popup-content">
-            <h2>註冊成功！</h2>
+            <h2>註冊成功！已發送註冊禮<br />請至優惠券專區查看～</h2>
             <button onClick={handleConfirmation}>確認</button>
           </div>
         </div>
